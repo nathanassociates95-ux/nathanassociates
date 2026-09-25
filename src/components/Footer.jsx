@@ -126,8 +126,9 @@ const Footer = () => {
             <li className="flex items-start gap-2.5">
               <MapPin size={15} className="mt-0.5 text-brand-orange shrink-0" aria-hidden="true" />
               <address className="not-italic leading-relaxed">
-                No.542, Lanchamedu, Viralimalai (Tk),
-                <br /> Pudukkottai (Dt), 621316
+                6/51, Medukattupatti, Thottiapatty Village, Marungapuri
+                <br />
+                Tiruchirapalli - 621 305, Tamilnadu
               </address>
             </li>
           </ul>
@@ -150,17 +151,6 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-5 text-sm text-gray-400 md:flex-row">
           <p>© {new Date().getFullYear()} Nathan Associates. All rights reserved.</p>
-          <p>
-            Website developed by{" "}
-            <a
-              href="https://www.hugeitsolutions.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-gray-300 transition-colors hover:text-brand-orange"
-            >
-              Huge IT Solutions
-            </a>
-          </p>
         </div>
       </div>
     </footer>

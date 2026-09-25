@@ -6,7 +6,7 @@ import { SERVICES } from "@/lib/services";
 const OFFICES = [
   {
     title: "Head Office",
-    lines: ["No.542, Lanchamedu,", "Viralimalai (Tk), Pudukkottai (Dt)", "Tamil Nadu - 621316"],
+    lines: ["6/51, Medukattupatti, Thottiapatty Village, Marungapuri", "Tiruchirapalli - 621 305, Tamilnadu"],
   },
   {
     title: "Branch - Trichy",
