@@ -3,36 +3,40 @@ import {
   Building2,
   Calculator,
   ClipboardList,
+  Compass,
   DraftingCompass,
-  Droplets,
-  FlaskConical,
-  Lightbulb,
-  Scale,
   Search,
   ShieldCheck,
   Workflow,
 } from "lucide-react";
 import { getServiceBySlug } from "@/lib/services";
+import { getServiceScope } from "@/lib/serviceScope";
 import ServiceHero from "@/components/ServiceHero";
 import SectionHeading from "@/components/SectionHeading";
 import IconGrid from "@/components/IconGrid";
 import NumberedSteps from "@/components/NumberedSteps";
 import CheckPanel from "@/components/CheckPanel";
+import ServiceScope from "@/components/ServiceScope";
 import EnquiryCta from "@/components/EnquiryCta";
 
 export const metadata = {
   title: "Consultancy | Nathan Associates",
   description:
-    "Consultancy by Nathan Associates - soil testing, groundwater survey, quantity survey, land & building valuation, 2D/3D design, structural & architectural design, BIM modelling, stability certificates and project management consultancy (PMC).",
+    "Consultancy by Nathan Associates - soil testing (SPT, ERT, CBT, Plate Load), ground water survey, quantity survey, land & building valuation, 2D/3D design, structural & architectural design, BIM modelling, GIS & DTM design, stability certificates and project management consultancy (PMC).",
   keywords: [
     "Consultancy",
     "Soil Test",
+    "SPT",
+    "ERT",
+    "CBT",
+    "Plate Load Test",
     "Ground Water Survey",
     "Quantity Survey",
     "Land & Building Valuation",
     "2D / 3D Plan & Designing",
     "Structural & Architectural Designing",
     "BIM Model & Design",
+    "GIS Design & DTM Design",
     "Stability Certificate",
     "Project Management Consultancy",
     "PMC",
@@ -42,43 +46,79 @@ export const metadata = {
 };
 
 const service = getServiceBySlug("consultancy");
+const scope = getServiceScope("consultancy");
 
-const capabilities = [
-  { title: "Soil Test", note: "Assessment of ground conditions to support safe, well-planned construction.", icon: FlaskConical },
-  { title: "Ground Water Survey", note: "Investigation of water availability and site conditions below the surface.", icon: Droplets },
-  { title: "Quantity Survey", note: "Estimation and measurement support for planning project quantities and costs.", icon: Calculator },
-  { title: "Land & Building Valuation", note: "Valuation support for land and buildings to assist informed decisions.", icon: Scale },
-  { title: "2D / 3D Plan & Designing", note: "Two and three dimensional planning and design for clearer project visualisation.", icon: DraftingCompass },
-  { title: "Structural / Architectural Designing", note: "Design support covering structural and architectural aspects of a project.", icon: Building2 },
-  { title: "BIM Model & Design", note: "Building Information Modelling to coordinate design data in a structured way.", icon: Boxes },
-  { title: "Stability Certificate", note: "Assessment on the stability of structures to support ongoing use or work.", icon: ShieldCheck },
-  { title: "Project Management Consultancy (PMC)", note: "Coordination and management support through project planning and execution.", icon: ClipboardList },
+const applicability = [
+  {
+    title: "New Construction",
+    note: "Site assessments, soil tests and design support before a project begins.",
+    icon: Building2,
+  },
+  {
+    title: "Property Purchase or Sale",
+    note: "Valuation support that gives you a clearer picture of a property's value.",
+    icon: Calculator,
+  },
+  {
+    title: "Existing Structures",
+    note: "Stability assessment before reuse, extension or renovation of what is already built.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Design & Coordination",
+    note: "2D/3D planning, BIM, GIS and PMC support for projects needing structured delivery.",
+    icon: DraftingCompass,
+  },
 ];
 
-const detailedServices = [
-  { title: "Soil Test", note: "Before construction begins, soil testing gives you information about the ground your structure will sit on - supporting safer, more realistic design and planning decisions.", icon: FlaskConical },
-  { title: "Ground Water Survey", note: "Ground water surveys investigate water availability and characteristics below the surface, supporting water sourcing, drainage and site development decisions.", icon: Droplets },
-  { title: "Quantity Survey", note: "Quantity surveying helps quantify materials, works and costs, giving you a clearer picture of quantities and estimates before work begins.", icon: Calculator },
-  { title: "Land & Building Valuation", note: "Valuation provides an assessment of value for properties, supporting decisions around buying, selling, financing and development planning.", icon: Scale },
-  { title: "2D / 3D Plan & Designing", note: "From two dimensional layouts to three dimensional visualisation, planning helps you see what is proposed before it is built.", icon: DraftingCompass },
-  { title: "Structural / Architectural Designing", note: "Design support that balances appearance, function and the structural considerations of a building or facility.", icon: Building2 },
-  { title: "BIM Model & Design", note: "Building Information Modelling organises design information into coordinated digital models for better collaboration.", icon: Boxes },
-  { title: "Stability Certificate", note: "An assessment of a structure's stability, often relevant before reuse, extension or other work.", icon: ShieldCheck },
-  { title: "Project Management Consultancy (PMC)", note: "PM consultancy brings coordination across planning, scheduling and follow-through so project pieces stay aligned.", icon: ClipboardList },
+const engagementNotes = [
+  {
+    title: "Advice Matched to Stage",
+    note: "The depth of support matches where your project actually is - an idea, a design stage or a site in progress.",
+    icon: Compass,
+  },
+  {
+    title: "Aligned With Survey Work",
+    note: "Where a project needs survey data alongside technical input, both can be coordinated within the same engagement.",
+    icon: Boxes,
+  },
+  {
+    title: "Documentation That Carries Forward",
+    note: "Outputs are prepared so they stay useful for approvals, execution and later stages of the project.",
+    icon: ClipboardList,
+  },
+  {
+    title: "One Point of Contact",
+    note: "A single, dependable contact for your assessment, design and project coordination needs.",
+    icon: Search,
+  },
 ];
 
 const lifecycleStages = [
-  { step: "01", title: "Planning & Assessment", note: "Surveys and assessments that inform your decisions before heavy commitments.", icon: Search },
-  { step: "02", title: "Design & Documentation", note: "Plans, drawings and models that make the project clear and buildable.", icon: DraftingCompass },
-  { step: "03", title: "Estimation & Valuation", note: "Quantity and valuation support for budgeting and decision-making.", icon: Calculator },
-  { step: "04", title: "Coordination & Execution", note: "Project management support that keeps planning and delivery aligned.", icon: Workflow },
-];
-
-const applicability = [
-  { title: "New Construction", note: "Site assessments, soil tests and design support before a project begins.", icon: Building2 },
-  { title: "Property Purchase or Sale", note: "Valuation support that gives you a clearer picture of a property's value.", icon: Scale },
-  { title: "Existing Structures", note: "Stability assessment and condition review before reuse or renovation.", icon: ShieldCheck },
-  { title: "Design & Coordination", note: "2D/3D planning, BIM and PMC support for projects needing structured delivery.", icon: Lightbulb },
+  {
+    step: "01",
+    title: "Planning & Assessment",
+    note: "Surveys and assessments that inform your decisions before heavy commitments.",
+    icon: Search,
+  },
+  {
+    step: "02",
+    title: "Design & Documentation",
+    note: "Plans, drawings and models that make the project clear and buildable.",
+    icon: DraftingCompass,
+  },
+  {
+    step: "03",
+    title: "Estimation & Valuation",
+    note: "Quantity and valuation support for budgeting and decision-making.",
+    icon: Calculator,
+  },
+  {
+    step: "04",
+    title: "Coordination & Execution",
+    note: "Project management support that keeps planning and delivery aligned.",
+    icon: Workflow,
+  },
 ];
 
 const expectations = [
@@ -114,8 +154,9 @@ export default function ConsultancyPage() {
             />
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
               Whether you are at the very beginning of an idea or already mid-project, our
-              consultancy support helps clarify what is needed and keeps the different parts of
-              your project working together.
+              consultancy support helps clarify what is needed and keeps the different parts of your
+              project working together. The scope below covers all {service.services.length}{" "}
+              consultancy services, grouped by the stage of the project they support.
             </p>
           </div>
           <div className="order-1 lg:order-2">
@@ -130,27 +171,27 @@ export default function ConsultancyPage() {
         </div>
       </section>
 
-      {/* Capabilities */}
+      {/* Service scope */}
       <section className="bg-gray-50 py-16 md:py-20">
         <div className="container-site">
           <SectionHeading
-            eyebrow="Consultancy Capabilities"
-            title="What We Offer"
-            description="Nine specialised consulting services, each delivered with clear and honest guidance."
+            eyebrow="What We Provide"
+            title="Consultancy Service Scope"
+            description="Grouped by the stage of the project each service supports. Every service below is explained in plain language, with the typical reason a client needs it."
           />
-          <IconGrid items={capabilities} lgCols={3} />
+          <ServiceScope groups={scope} />
         </div>
       </section>
 
-      {/* Detailed services */}
+      {/* Applicability */}
       <section className="bg-white py-16 md:py-20">
         <div className="container-site">
           <SectionHeading
-            eyebrow="Detailed Services"
-            title="What Each Service Involves"
-            description="A closer look at how each consultancy service helps you."
+            eyebrow="When You Need Consultancy"
+            title="Where Consultancy Helps Most"
+            description="These are the situations where consultancy support brings the most value to a project."
           />
-          <IconGrid items={detailedServices} lgCols={3} />
+          <IconGrid items={applicability} lgCols={2} />
         </div>
       </section>
 
@@ -166,23 +207,20 @@ export default function ConsultancyPage() {
         </div>
       </section>
 
-      {/* Applicability + expectations */}
+      {/* Engagement + expectations */}
       <section className="bg-white py-16 md:py-20">
         <div className="container-site grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
             <SectionHeading
               align="left"
-              eyebrow="Who This Is For"
-              title="Where Consultancy Helps Most"
-              description="These are the situations where consultancy support brings the most value."
+              eyebrow="How We Engage"
+              title="Support That Fits Your Project"
+              description="Consultancy is not a fixed package. The engagement is shaped around the stage your project has reached."
             />
-            <IconGrid items={applicability} lgCols={2} />
+            <IconGrid items={engagementNotes} lgCols={2} />
           </div>
           <div className="lg:pt-12">
-            <CheckPanel
-              title="What You Can Expect as a Client"
-              items={expectations}
-            />
+            <CheckPanel title="What You Can Expect as a Client" items={expectations} />
           </div>
         </div>
       </section>

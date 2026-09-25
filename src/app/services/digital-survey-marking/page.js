@@ -2,7 +2,6 @@ import {
   CheckCircle2,
   ClipboardList,
   Compass,
-  Crosshair,
   FileText,
   Layers,
   Map,
@@ -12,117 +11,74 @@ import {
   Target,
 } from "lucide-react";
 import { getServiceBySlug } from "@/lib/services";
+import { getServiceScope } from "@/lib/serviceScope";
 import ServiceHero from "@/components/ServiceHero";
 import SectionHeading from "@/components/SectionHeading";
 import IconGrid from "@/components/IconGrid";
 import NumberedSteps from "@/components/NumberedSteps";
 import CheckPanel from "@/components/CheckPanel";
+import ServiceScope from "@/components/ServiceScope";
 import EnquiryCta from "@/components/EnquiryCta";
 
 export const metadata = {
   title: "Digital Survey & Marking | Nathan Associates",
   description:
-    "Digital Survey & Marking by Nathan Associates - topographical, contour, FMB, boundary, DGPS, drone, road, layout, sub division surveys and on-site marking for planning and construction projects.",
+    "Digital Survey & Marking by Nathan Associates - topographical, contour, FMB, cadastral, boundary, as-built, DGPS and GPS, drone or airline, road, pipeline, oil and gas, layout, sub division and specialised marking surveys.",
   keywords: [
     "Digital Survey & Marking",
     "Topographical Survey",
     "Contour Survey",
     "FMB Survey",
-    "Boundary Survey",
+    "Boundary Survey / Marking",
     "As-Built Survey",
-    "DGPS Survey",
-    "GPS Survey",
-    "Drone Survey",
+    "DGPS and GPS Survey",
+    "Drone / Airline Survey",
     "Cadastral Survey",
-    "Pipeline Survey",
+    "Pipeline Survey / Marking",
+    "Oil and Gas Survey",
     "Road Survey and Marking",
     "Layout Survey and Marking",
-    "Sub Division Survey",
-    "Level Transfer",
-    "Petrol Bunk Marking",
+    "Sub Division Survey and Marking",
+    "Construction Sector Marking",
+    "Level Transfer Marking",
+    "Bed Bolt Alignment Marking",
+    "Petrol Bunk Marking / Survey",
     "Survey Marking",
   ],
 };
 
 const service = getServiceBySlug("digital-survey-marking");
-
-const capabilityGroups = [
-  {
-    title: "Land, Boundary & Documentation",
-    intro: "Surveys that establish what a site really is - its shape, size, boundaries and features.",
-    icon: Map,
-    items: [
-      { name: "Topographical Survey", note: "Captures ground features and natural levels of a site." },
-      { name: "Contour Survey", note: "Maps the site's slope and elevation changes." },
-      { name: "FMB Survey", note: "Field measurement book survey for land records." },
-      { name: "Boundary Survey / Marking", note: "Establishes and marks property boundary lines." },
-      { name: "Cadastral Survey", note: "Identifies land parcels and their official limits." },
-    ],
-  },
-  {
-    title: "Positioning, Aerial & Leveling",
-    intro: "Technology-backed surveys that deliver precise coordinates, aerial views and level data.",
-    icon: Crosshair,
-    items: [
-      { name: "DGPS and GPS Survey", note: "Satellite positioning for accurate site coordinates." },
-      { name: "Drone / Aerial Survey", note: "Aerial mapping for large or difficult to reach sites." },
-      { name: "As-Built Survey", note: "Records the actual position of completed structures." },
-      { name: "Level Transfer / Marking", note: "Transfers reference levels across a site for execution." },
-    ],
-  },
-  {
-    title: "Infrastructure & Utilities",
-    intro: "Alignment and marking support for roads, pipelines and working sites.",
-    icon: MapPin,
-    items: [
-      { name: "Pipeline Survey / Marking", note: "Route surveys and marking for pipeline works." },
-      { name: "Oil and Gas Survey", note: "Site surveys and marking for oil and gas installations." },
-      { name: "Road Survey and Marking", note: "Survey, alignment and marking for road projects." },
-      { name: "Construction Sector Marking", note: "On-site marking that guides construction execution." },
-    ],
-  },
-  {
-    title: "Layouts, Alignment & Specialised Marking",
-    intro: "Precise layout and alignment marking for plots, machines and fuel stations.",
-    icon: Layers,
-    items: [
-      { name: "Layout Survey and Marking", note: "Sets out plot layouts on the ground as per plan." },
-      { name: "Sub Division Survey and Marking", note: "Divides land into individual plots with clear marks." },
-      { name: "Bed Bolt Alignment Marking", note: "Precise alignment marking for machine bed bolts." },
-      { name: "Petrol Bunk Marking / Survey", note: "Layout and marking surveys for petrol bunk sites." },
-    ],
-  },
-];
+const scope = getServiceScope("digital-survey-marking");
 
 const applications = [
   {
     title: "Plot & Land Buying",
-    note: "Verify boundaries, area and records before you buy or sell land.",
+    note: "Check boundaries, parcel information and site features before a land transaction or development decision.",
     icon: MapPin,
   },
   {
     title: "Layout Development",
-    note: "Divide land into marketable plots with accurate layout marking.",
+    note: "Survey and mark planned plots, roads and subdivision lines for a layout project.",
     icon: Layers,
   },
   {
     title: "New Construction Planning",
-    note: "Start from accurate site levels, features and boundaries.",
+    note: "Start planning with site levels, physical features and boundary information.",
     icon: Compass,
   },
   {
     title: "Road & Infrastructure Works",
-    note: "Survey and marking for roads, pipelines and service lines.",
+    note: "Survey and mark roads, pipelines and other utility alignments.",
     icon: Map,
   },
   {
     title: "On-Site Execution",
-    note: "Keep construction aligned with the approved plan and levels.",
+    note: "Use marking and level information to guide construction against the planned arrangement.",
     icon: Target,
   },
   {
     title: "Post-Construction Records",
-    note: "As-built surveys that document what was actually built.",
+    note: "Record completed work with an as-built survey for review and future reference.",
     icon: FileText,
   },
 ];
@@ -179,7 +135,7 @@ const whyClients = [
   {
     title: "Support Beyond the Survey",
     note: "Ongoing marking and guidance through planning and execution.",
-    icon: Crosshair,
+    icon: Map,
   },
 ];
 
@@ -212,12 +168,13 @@ export default function DigitalSurveyMarkingPage() {
               align="left"
               eyebrow="Service Overview"
               title="Accurate Measurements, Clear Decisions"
-              description="Surveying is the foundation of good planning. Before a site is designed, subdivided, built on or sold, someone has to know exactly what is on the ground - where the boundaries are, how the land slopes, and what features it holds."
+              description="Surveying is the foundation of good planning. Before a site is designed, subdivided, built on or sold, the important questions include where the boundaries lie, how the land slopes and what physical features are present."
             />
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-              Nathan Associates captures that information using modern instruments and careful
-              field work, then translates it into measurements, markings and reports you can
-              plan, design and build from - with confidence.
+              Nathan Associates captures that information using modern instruments and careful field
+              work, then turns it into measurements, marked points, drawings and reports that can be
+              used for planning, design and construction. Our scope covers {service.services.length}{" "}
+              survey and marking capabilities across land, infrastructure and built environments.
             </p>
           </div>
           <div className="order-1 lg:order-2">
@@ -232,41 +189,15 @@ export default function DigitalSurveyMarkingPage() {
         </div>
       </section>
 
-      {/* Capabilities */}
+      {/* Service scope */}
       <section className="bg-gray-50 py-16 md:py-20">
         <div className="container-site">
           <SectionHeading
-            eyebrow="Service Capabilities"
-            title="What We Cover"
-            description="Every capability below is a supported part of our Digital Survey &amp; Marking service."
+            eyebrow="What We Provide"
+            title="Service Scope &amp; Survey Capabilities"
+            description="Each capability below is explained in plain language - what it is, and the kind of project it is normally needed for."
           />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {capabilityGroups.map((group) => (
-              <div key={group.title} className="card p-6 md:p-7">
-                <div className="flex items-center gap-3">
-                  <span className="icon-chip">
-                    <group.icon size={19} strokeWidth={1.6} aria-hidden="true" />
-                  </span>
-                  <h3 className="text-lg font-bold text-gray-900">{group.title}</h3>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{group.intro}</p>
-                <ul className="mt-4 space-y-2">
-                  {group.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2
-                        className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange"
-                        aria-hidden="true"
-                      />
-                      <span className="text-sm leading-relaxed text-gray-800">
-                        <span className="font-semibold text-gray-900">{item.name}</span>{" "}
-                        <span className="text-slate-600">- {item.note}</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <ServiceScope groups={scope} />
         </div>
       </section>
 
@@ -275,8 +206,8 @@ export default function DigitalSurveyMarkingPage() {
         <div className="container-site">
           <SectionHeading
             eyebrow="Typical Applications"
-            title="Where This Service Helps"
-            description="These are common situations where accurate surveying and marking makes a real difference."
+            title="When You Need This Service"
+            description="These are the common situations where accurate surveying and marking makes a real difference to the outcome."
           />
           <IconGrid items={applications} lgCols={3} />
         </div>

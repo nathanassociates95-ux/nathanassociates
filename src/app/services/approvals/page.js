@@ -1,27 +1,30 @@
 import {
   Building2,
-  ClipboardList,
   CheckCircle2,
+  ClipboardList,
   FileText,
   FolderCheck,
   Landmark,
-  ScrollText,
+  MapPin,
+  Scale,
   Search,
   Stamp,
   Workflow,
 } from "lucide-react";
 import { getServiceBySlug } from "@/lib/services";
+import { getServiceScope } from "@/lib/serviceScope";
 import ServiceHero from "@/components/ServiceHero";
 import SectionHeading from "@/components/SectionHeading";
 import IconGrid from "@/components/IconGrid";
 import NumberedSteps from "@/components/NumberedSteps";
 import CheckPanel from "@/components/CheckPanel";
+import ServiceScope from "@/components/ServiceScope";
 import EnquiryCta from "@/components/EnquiryCta";
 
 export const metadata = {
   title: "Approvals | Nathan Associates",
   description:
-    "Approval support by Nathan Associates - DTCP, RERA, building plan, commercial, industrial, Panchayat, Corporation, NOC and HACA approvals, land conversion and regularisation.",
+    "Approval support by Nathan Associates - DTCP, RERA, building plan, commercial, industrial, Panchayat, Corporation and HACA approvals, NOC certificates, land conversion, regularisation, single plot approval and unapproved plot regularisation.",
   keywords: [
     "Approvals",
     "DTCP Approval",
@@ -35,39 +38,103 @@ export const metadata = {
     "Land Conversion",
     "Regularisation",
     "HACA Approval",
+    "Single Plot Approval",
+    "Unapproved Plot Regularisation",
     "Approval Assistance",
     "Approval Documentation",
   ],
 };
 
 const service = getServiceBySlug("approvals");
+const scope = getServiceScope("approvals");
 
-const approvalServices = [
-  { title: "DTCP / RERA Approval", note: "Guidance with approvals required under town and country planning and real estate regulation frameworks.", icon: Landmark },
-  { title: "Building Plan Approval", note: "Assistance with the documentation and process needed to get building plans approved.", icon: Building2 },
-  { title: "Commercial Approval", note: "Coordination help for approvals relating to commercial buildings and projects.", icon: Stamp },
-  { title: "Industrial Approval", note: "Support for the approvals connected with industrial buildings and facilities.", icon: Workflow },
-  { title: "Panchayat Approval", note: "Help navigating approval procedures handled at the Panchayat level for rural properties.", icon: Landmark },
-  { title: "Corporation Approval", note: "Assistance with approvals processed through Municipal Corporation for urban properties.", icon: Building2 },
-  { title: "NOC Certificate Approval", note: "Guidance in preparing for and following up on certificate / no-objection approvals.", icon: Stamp },
-  { title: "Land Conversion", note: "Documentation and process support when the classification of land needs to be converted.", icon: Search },
-  { title: "Regularisation", note: "Help structuring applications for regularisation of existing structures where applicable.", icon: FolderCheck },
-  { title: "HACA Approval", note: "Assistance with approvals relating to HACA / hill area development requirements.", icon: ScrollText },
+const situations = [
+  {
+    title: "Starting a New Building",
+    note: "A house, apartment or commercial building that needs a sanctioned plan before construction starts.",
+    icon: Building2,
+  },
+  {
+    title: "Changing the Use of Land",
+    note: "Land that must be converted before it can be built on, sold or developed as planned.",
+    icon: Scale,
+  },
+  {
+    title: "Layouts & Plot Sales",
+    note: "Layout and single-plot approvals needed before plots are marketed or sold.",
+    icon: MapPin,
+  },
+  {
+    title: "Unapproved or Disputed Plots",
+    note: "Plots without completed paperwork, including inherited or purchased land.",
+    icon: FolderCheck,
+  },
+  {
+    title: "Industrial & Facility Projects",
+    note: "Industrial land, factories and facilities with additional departmental clearances.",
+    icon: Workflow,
+  },
+  {
+    title: "NOC From Another Department",
+    note: "Plots or projects that cannot proceed without a no-objection certificate.",
+    icon: Stamp,
+  },
 ];
 
 const processSteps = [
-  { step: "01", title: "Understand the Requirement", note: "We start by listening to your project, land and what you are trying to achieve.", icon: Search },
-  { step: "02", title: "Identify Applicable Approval", note: "We help you understand which approval category likely applies to your situation.", icon: Landmark },
-  { step: "03", title: "Prepare / Review Information", note: "We guide you on the information and documents your application may need.", icon: FileText },
-  { step: "04", title: "Submission & Coordination", note: "We help prepare the application and coordinate with the relevant process.", icon: ClipboardList },
-  { step: "05", title: "Follow-Up & Status Assistance", note: "We stay engaged, tracking the status and helping you respond to requirements.", icon: CheckCircle2 },
+  {
+    step: "01",
+    title: "Understand the Requirement",
+    note: "We start by listening to your project, land and what you are trying to achieve.",
+    icon: Search,
+  },
+  {
+    step: "02",
+    title: "Identify Applicable Approval",
+    note: "We help you understand which approval category likely applies to your situation.",
+    icon: Landmark,
+  },
+  {
+    step: "03",
+    title: "Prepare / Review Information",
+    note: "We guide you on the information and documents your application may need.",
+    icon: FileText,
+  },
+  {
+    step: "04",
+    title: "Submission & Coordination",
+    note: "We help prepare the application and coordinate with the relevant process.",
+    icon: ClipboardList,
+  },
+  {
+    step: "05",
+    title: "Follow-Up & Status Assistance",
+    note: "We stay engaged, tracking the status and helping you respond to requirements.",
+    icon: CheckCircle2,
+  },
 ];
 
 const whoFor = [
-  { title: "Individual Property Owners", note: "Homeowners and land owners planning construction, conversion or regularisation.", icon: Building2 },
-  { title: "Developers & Builders", note: "Those developing layouts, commercial or industrial projects that need approvals.", icon: FolderCheck },
-  { title: "Businesses & Institutions", note: "Organisations establishing facilities that require applicable approvals.", icon: Stamp },
-  { title: "Anyone Facing Hold-Ups", note: "Clients dealing with documentation questions who want clear, practical guidance.", icon: FileText },
+  {
+    title: "Individual Property Owners",
+    note: "Homeowners and land owners planning construction, conversion or regularisation.",
+    icon: Building2,
+  },
+  {
+    title: "Developers & Builders",
+    note: "Those developing layouts, commercial or industrial projects that need approvals.",
+    icon: FolderCheck,
+  },
+  {
+    title: "Businesses & Institutions",
+    note: "Organisations establishing facilities that require applicable approvals.",
+    icon: Stamp,
+  },
+  {
+    title: "Anyone Facing Hold-Ups",
+    note: "Clients dealing with documentation questions who want clear, practical guidance.",
+    icon: FileText,
+  },
 ];
 
 const deliverables = [
@@ -105,7 +172,8 @@ export default function ApprovalsPage() {
               The right approval depends on the type of project, where the land is located and the
               records that already exist. Nathan Associates helps you understand what is actually
               needed, prepare the correct information, and move through the process with clear
-              guidance at every step.
+              guidance at every step. Our approvals scope covers {service.services.length} service
+              categories, from statutory sanction through to plot regularisation.
             </p>
           </div>
           <div className="order-1 lg:order-2">
@@ -120,23 +188,35 @@ export default function ApprovalsPage() {
         </div>
       </section>
 
-      {/* Approval services */}
+      {/* Approval scope */}
       <section className="bg-gray-50 py-16 md:py-20">
         <div className="container-site">
           <SectionHeading
-            eyebrow="Approval Services"
-            title="How We Can Help"
-            description="Every item below is a category of approval assistance we support. Select the one closest to your project and we will guide you through the rest."
+            eyebrow="Approval &amp; Service Categories"
+            title="What We Cover"
+            description="Every category below is a service we support. Each one explains what it concerns and when a client typically needs it."
           />
-          <IconGrid items={approvalServices} lgCols={3} />
+          <ServiceScope groups={scope} />
+        </div>
+      </section>
+
+      {/* Situations */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="container-site">
+          <SectionHeading
+            eyebrow="When To Call Us"
+            title="Situations That Need Approval Support"
+            description="If any of the following sounds like your project, the relevant approval is likely part of what you need to resolve."
+          />
+          <IconGrid items={situations} lgCols={3} />
         </div>
       </section>
 
       {/* Process */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-gray-50 py-16 md:py-20">
         <div className="container-site">
           <SectionHeading
-            eyebrow="Documentation & Process Guidance"
+            eyebrow="How We Work With You"
             title="How We Support You Through Approval"
             description="Approval journeys differ by project and location - this is the way we work with you through yours."
           />
@@ -145,7 +225,7 @@ export default function ApprovalsPage() {
       </section>
 
       {/* Who + expectations */}
-      <section className="bg-gray-50 py-16 md:py-20">
+      <section className="bg-white py-16 md:py-20">
         <div className="container-site grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
             <SectionHeading
@@ -157,10 +237,7 @@ export default function ApprovalsPage() {
             <IconGrid items={whoFor} lgCols={2} />
           </div>
           <div className="lg:pt-12">
-            <CheckPanel
-              title="What You Can Expect as a Client"
-              items={deliverables}
-            />
+            <CheckPanel title="What You Can Expect as a Client" items={deliverables} />
           </div>
         </div>
       </section>
