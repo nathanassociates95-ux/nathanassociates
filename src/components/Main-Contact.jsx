@@ -23,8 +23,8 @@ const OFFICES = [
 ];
 
 const HEAD_OFFICE_MAP_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
-  OFFICES[0].lines.join(", "),
-)}&z=16&output=embed`;
+  ["Nathan Associates", ...OFFICES[0].lines].join(", "),
+)}&z=17&output=embed`;
 
 const ContactSection = ({ withHeading = true }) => {
   return (
@@ -159,7 +159,7 @@ const ContactSection = ({ withHeading = true }) => {
             <div className="card h-full overflow-hidden">
               <iframe
                 src={HEAD_OFFICE_MAP_URL}
-                className="h-[320px] w-full bg-slate-100 lg:h-full lg:min-h-[420px]"
+                className="aspect-[4/3] h-auto w-full bg-slate-100 lg:aspect-auto lg:h-full lg:min-h-[420px]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
