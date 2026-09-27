@@ -22,6 +22,10 @@ const OFFICES = [
   },
 ];
 
+const HEAD_OFFICE_MAP_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
+  OFFICES[0].lines.join(", "),
+)}&z=16&output=embed`;
+
 const ContactSection = ({ withHeading = true }) => {
   return (
     <section id="contact" className="bg-white py-16 md:py-20">
@@ -152,9 +156,9 @@ const ContactSection = ({ withHeading = true }) => {
 
           {/* Map */}
           <div className="lg:col-span-2">
-            <div className="card relative h-full overflow-hidden">
+            <div className="card h-full overflow-hidden">
               <iframe
-                src="https://maps.google.com/maps?q=10.52254,78.48368&z=17&output=embed"
+                src={HEAD_OFFICE_MAP_URL}
                 className="h-[320px] w-full bg-slate-100 lg:h-full lg:min-h-[420px]"
                 style={{ border: 0 }}
                 allowFullScreen
@@ -162,19 +166,6 @@ const ContactSection = ({ withHeading = true }) => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="NATHAN ASSOCIATES head office location map"
               />
-              <div
-                className="pointer-events-none absolute inset-x-0 bottom-1/2 z-10 flex justify-center px-3"
-                aria-hidden="true"
-              >
-                <div className="mb-10 max-w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-center shadow-md sm:px-4">
-                  <p className="whitespace-nowrap text-[11px] font-bold uppercase leading-tight tracking-[0.12em] text-brand-navy sm:text-xs">
-                    Nathan Associates
-                  </p>
-                  <p className="mt-1 text-[10px] font-medium uppercase leading-tight tracking-[0.12em] text-slate-500 sm:text-[11px]">
-                    Head Office
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
