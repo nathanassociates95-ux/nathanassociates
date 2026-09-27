@@ -392,3 +392,8 @@ export const getServiceScope = (slug) => SERVICE_SCOPE[slug] || [];
 
 export const getServiceNames = (slug) =>
   getServiceScope(slug).flatMap((group) => group.items.map((item) => item.name));
+
+export const getServiceCapabilities = (slug) =>
+  getServiceScope(slug).flatMap((group) =>
+    group.items.map((item) => ({ name: item.name, note: item.note })),
+  );

@@ -54,7 +54,7 @@ export default function Home() {
       <CapabilityStrip />
       <AboutSection />
       <ProcessSection />
-      <ServicesSection singleLine />
+      <ServicesSection detailed />
       <TechnicalFlow />
       <WhySection />
       <ContactSection />

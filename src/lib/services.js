@@ -1,4 +1,4 @@
-import { getServiceNames } from "@/lib/serviceScope";
+import { getServiceNames, getServiceCapabilities } from "@/lib/serviceScope";
 
 export const SERVICES = [
   {
@@ -76,6 +76,7 @@ export const SERVICES = [
 ].map((service) => ({
   ...service,
   services: getServiceNames(service.slug),
+  capabilities: getServiceCapabilities(service.slug),
 }));
 
 export const getServiceBySlug = (slug) =>

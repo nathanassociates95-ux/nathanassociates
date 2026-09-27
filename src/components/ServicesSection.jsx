@@ -1,9 +1,8 @@
 import ServiceCard from "./ServiceCard";
 import SectionHeading from "./SectionHeading";
 import { SERVICES } from "@/lib/services";
-import { cn } from "@/lib/utils";
 
-const ServicesSection = ({ singleLine = false }) => {
+const ServicesSection = ({ detailed = false }) => {
   return (
     <section id="services" className="bg-gray-50 py-16 md:py-20">
       <div className="container-site">
@@ -15,14 +14,9 @@ const ServicesSection = ({ singleLine = false }) => {
           description="Digital Survey &amp; Marking, Approvals and Consultancy - accurate data, clear processes and dependable support for every project."
         />
 
-        <div
-          className={cn(
-            "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3",
-            singleLine && "w-max min-w-full",
-          )}
-        >
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service) => (
-            <ServiceCard key={service.slug} service={service} singleLine={singleLine} />
+            <ServiceCard key={service.slug} service={service} detailed={detailed} />
           ))}
         </div>
       </div>
