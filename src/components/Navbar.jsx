@@ -116,13 +116,19 @@ export const Navbar = () => {
               <span className="nav-micro-shadow text-[10px] font-semibold uppercase tracking-wider text-white/90">
                 Call Us
               </span>
-              <span className="flex items-center gap-2.5">
+              <span className="flex items-center gap-1.5">
                 <a
                   href="tel:+919787240999"
                   className="phone-number nav-micro-shadow text-[13px] font-bold text-white transition-colors hover:text-brand-orange"
                 >
                   +91 97872 40999
                 </a>
+                <span
+                  aria-hidden="true"
+                  className="phone-number nav-micro-shadow text-[13px] font-bold text-white"
+                >
+                  /
+                </span>
                 <a
                   href="tel:+917397733223"
                   className="phone-number nav-micro-shadow text-[13px] font-bold text-white transition-colors hover:text-brand-orange"
