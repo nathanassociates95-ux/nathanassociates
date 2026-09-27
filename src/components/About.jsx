@@ -37,15 +37,6 @@ const AboutSection = () => {
               className="aspect-square w-full object-cover"
             />
           </div>
-
-          <div className="absolute -top-5 left-4 rounded-xl bg-brand-navy px-4 py-3 shadow-lg sm:left-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-orange">
-              Survey · Approvals
-            </p>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-orange">
-              · Consultancy
-            </p>
-          </div>
         </div>
 
         {/* Content */}
