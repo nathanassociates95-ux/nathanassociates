@@ -154,7 +154,7 @@ const ContactSection = ({ withHeading = true }) => {
           <div className="lg:col-span-2">
             <div className="card h-full overflow-hidden">
               <iframe
-                src="https://maps.google.com/maps?q=6%2F51%2C%20Medukattupatti%2C%20Thottiapatty%20Village%2C%20Marungapuri%2C%20Tiruchirapalli%20-%20621%20305%2C%20Tamilnadu&z=16&output=embed"
+                src="https://maps.google.com/maps?q=10.52254,78.48368&z=17&output=embed"
                 className="h-[320px] w-full bg-slate-100 lg:h-full lg:min-h-[420px]"
                 style={{ border: 0 }}
                 allowFullScreen
