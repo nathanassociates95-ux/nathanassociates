@@ -9,6 +9,10 @@ const OFFICES = [
     lines: ["6/51, Medukattupatti, Thottiapatty Village, Marungapuri", "Tiruchirapalli - 621 305, Tamilnadu"],
   },
   {
+    title: "Pudukkottai Branch",
+    lines: ["No.542 Lanchamodu Viraimalai (Tk), Pudukkottai (Dt)", "Tamilnadu - 621 316"],
+  },
+  {
     title: "Branch - Trichy",
     lines: ["No.4, Mani Tower, Ramalingam Street,", "Manapparai, Trichy", "Tamil Nadu - 621306"],
   },
@@ -150,7 +154,7 @@ const ContactSection = ({ withHeading = true }) => {
           <div className="lg:col-span-2">
             <div className="card h-full overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.6820896611794!2d78.54423677451521!3d10.604009862351367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa64b984b7f87b%3A0xf10d0877fe11e4ce!2sViralimalai%20Post%20Office!5e0!3m2!1sen!2sin!4v1767175149553!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=6%2F51%2C%20Medukattupatti%2C%20Thottiapatty%20Village%2C%20Marungapuri%2C%20Tiruchirapalli%20-%20621%20305%2C%20Tamilnadu&z=16&output=embed"
                 className="h-[320px] w-full bg-slate-100 lg:h-full lg:min-h-[420px]"
                 style={{ border: 0 }}
                 allowFullScreen
