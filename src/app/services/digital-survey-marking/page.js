@@ -234,7 +234,7 @@ export default function DigitalSurveyMarkingPage() {
             <SectionHeading
               align="left"
               eyebrow="Why Clients Work With Us"
-              title="Surveyers You Can Build On"
+              title="Surveyors You Can Build On"
             />
             <IconGrid items={whyClients} lgCols={2} />
           </div>

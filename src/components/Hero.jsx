@@ -21,7 +21,7 @@ export const Hero = () => {
             </span>
           </span>
           <h1 className="hero-content-rise text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-[3.5rem] lg:text-6xl" style={{ animationDelay: "100ms" }}>
-            Precision Surveyers &amp;
+            Precision Surveyors &amp;
             <br />
             Project Services,
             <br />
