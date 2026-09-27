@@ -10,6 +10,8 @@ const ServiceHero = ({
   alt,
   whatsapp,
   waText,
+  phone,
+  phoneDisplay,
   primaryHref = "/#contact",
 }) => {
   return (
@@ -64,6 +66,19 @@ const ServiceHero = ({
                 Enquire on WhatsApp
               </a>
             </div>
+
+            {phone && phoneDisplay && (
+              <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-white/80">
+                <Phone size={15} className="shrink-0 text-brand-orange" aria-hidden="true" />
+                <span>or call</span>
+                <a
+                  href={`tel:${phone}`}
+                  className="phone-number font-semibold text-white transition-colors hover:text-brand-orange"
+                >
+                  {phoneDisplay}
+                </a>
+              </p>
+            )}
           </div>
         </div>
       </div>

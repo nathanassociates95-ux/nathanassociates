@@ -156,6 +156,8 @@ export default function ApprovalsPage() {
         alt="Approval process and documentation"
         whatsapp="919787240999"
         waText="Hello, I would like to enquire about Approvals"
+        phone="+919787240999"
+        phoneDisplay="+91 97872 40999"
       />
 
       {/* Overview */}
