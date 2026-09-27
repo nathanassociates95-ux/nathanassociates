@@ -24,7 +24,7 @@ const Footer = () => {
     <footer className="relative bg-brand-navy-deep text-white">
       <div className="border-b border-white/10">
         <div className="container-site flex flex-wrap items-center justify-between gap-2 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-gray-500">
-          <span>Nathan Associates</span>
+          <span>NATHAN ASSOCIATES</span>
           <span className="hidden sm:inline">Survey · Approvals · Consultancy</span>
           <span>Tamil Nadu · India</span>
         </div>
@@ -32,12 +32,12 @@ const Footer = () => {
       <div className="container-site grid grid-cols-1 gap-10 py-14 md:grid-cols-2 md:py-16 lg:grid-cols-4 lg:gap-12">
         {/* Brand */}
         <div className="space-y-4">
-          <Link href="/" className="flex items-center gap-2.5" aria-label="Nathan Associates - Home">
+          <Link href="/" className="flex items-center gap-2.5" aria-label="NATHAN ASSOCIATES - Home">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-0.5">
               <img src="/images/logo-dark.png" alt="" className="h-full w-full object-contain" />
             </span>
             <span className="flex flex-col leading-tight">
-              <span className="text-lg font-bold tracking-tight">Nathan Associates</span>
+              <span className="text-lg font-bold tracking-tight">NATHAN ASSOCIATES</span>
               <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-brand-orange">
                 Survey · Approvals · Consultancy
               </span>
@@ -53,7 +53,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center p-2 text-gray-400 transition-colors hover:text-brand-orange md:inline md:p-0"
-              aria-label="Nathan Associates on Facebook"
+              aria-label="NATHAN ASSOCIATES on Facebook"
             >
               <Facebook size={18} />
             </a>
@@ -62,7 +62,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center p-2 text-gray-400 transition-colors hover:text-brand-orange md:inline md:p-0"
-              aria-label="Nathan Associates on Instagram"
+              aria-label="NATHAN ASSOCIATES on Instagram"
             >
               <Instagram size={18} />
             </a>
@@ -108,15 +108,15 @@ const Footer = () => {
           </h4>
           <ul className="space-y-3 text-sm text-gray-300">
             <li>
-              <a href="tel:+917397733223" className="flex items-center gap-2.5 transition-colors hover:text-brand-orange">
+              <a href="tel:+919787240999" className="phone-number flex items-center gap-2.5 transition-colors hover:text-brand-orange">
                 <Phone size={15} className="text-brand-orange shrink-0" aria-hidden="true" />
-                +91 73977 33223
+                +91 97872 40999
               </a>
             </li>
             <li>
-              <a href="tel:+919787240999" className="flex items-center gap-2.5 transition-colors hover:text-brand-orange">
+              <a href="tel:+917397733223" className="phone-number flex items-center gap-2.5 transition-colors hover:text-brand-orange">
                 <Phone size={15} className="text-brand-orange shrink-0" aria-hidden="true" />
-                +91 97872 40999
+                +91 73977 33223
               </a>
             </li>
             <li>
@@ -152,7 +152,7 @@ const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-5 text-sm text-gray-400 md:flex-row">
-          <p>© {new Date().getFullYear()} Nathan Associates. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} NATHAN ASSOCIATES. All rights reserved.</p>
         </div>
       </div>
     </footer>

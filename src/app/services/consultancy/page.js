@@ -150,7 +150,7 @@ export default function ConsultancyPage() {
               align="left"
               eyebrow="Consultancy Overview"
               title="Technical Support Across the Project Journey"
-              description="A good project depends on good information. Consultancy at Nathan Associates covers the practical and technical aspects around construction - understanding the ground, valuing property, preparing plans and designs, and coordinating the work from planning through to execution."
+              description="A good project depends on good information. Consultancy at NATHAN ASSOCIATES covers the practical and technical aspects around construction - understanding the ground, valuing property, preparing plans and designs, and coordinating the work from planning through to execution."
             />
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
               Whether you are at the very beginning of an idea or already mid-project, our

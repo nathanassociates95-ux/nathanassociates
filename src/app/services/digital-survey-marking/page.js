@@ -171,7 +171,7 @@ export default function DigitalSurveyMarkingPage() {
               description="Surveying is the foundation of good planning. Before a site is designed, subdivided, built on or sold, the important questions include where the boundaries lie, how the land slopes and what physical features are present."
             />
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-              Nathan Associates captures that information using modern instruments and careful field
+              NATHAN ASSOCIATES captures that information using modern instruments and careful field
               work, then turns it into measurements, marked points, drawings and reports that can be
               used for planning, design and construction. Our scope covers {service.services.length}{" "}
               survey and marking capabilities across land, infrastructure and built environments.
@@ -232,7 +232,7 @@ export default function DigitalSurveyMarkingPage() {
             <SectionHeading
               align="left"
               eyebrow="Why Clients Work With Us"
-              title="Surveying You Can Build On"
+              title="Surveyers You Can Build On"
             />
             <IconGrid items={whyClients} lgCols={2} />
           </div>

@@ -170,7 +170,7 @@ export default function ApprovalsPage() {
             />
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
               The right approval depends on the type of project, where the land is located and the
-              records that already exist. Nathan Associates helps you understand what is actually
+              records that already exist. NATHAN ASSOCIATES helps you understand what is actually
               needed, prepare the correct information, and move through the process with clear
               guidance at every step. Our approvals scope covers {service.services.length} service
               categories, from statutory sanction through to plot regularisation.

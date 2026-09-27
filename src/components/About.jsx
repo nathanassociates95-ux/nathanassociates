@@ -25,7 +25,7 @@ const AboutSection = () => {
           <div className="overflow-hidden rounded-2xl">
             <img
               src="/img/whoweare.png"
-              alt="Nathan Associates at work"
+              alt="NATHAN ASSOCIATES at work"
               className="aspect-[4/5] w-full object-cover"
             />
           </div>
@@ -46,7 +46,7 @@ const AboutSection = () => {
             Who We Are
           </h2>
           <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
-            Nathan Associates was established in Tamil Nadu with a clear vision - to bridge the
+            NATHAN ASSOCIATES was established in Tamil Nadu with a clear vision - to bridge the
             growing gap in surveying services within the construction industry. What began as a
             focused initiative has grown into a surveying and project services provider, working
             across India with a team of qualified professionals.
@@ -75,18 +75,32 @@ const AboutSection = () => {
             <Link href="/#contact" className="btn btn-primary">
               Make an Enquiry
             </Link>
-            <a
-              href="tel:+919787240999"
-              className="inline-flex items-center gap-3 text-left"
-            >
-              <span className="icon-chip h-11 w-11">
-                <Phone size={17} aria-hidden="true" />
-              </span>
-              <span className="flex flex-col">
-                <span className="text-sm text-slate-500">Call us anytime</span>
-                <span className="font-bold text-gray-900">+91 97872 40999</span>
-              </span>
-            </a>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a
+                href="tel:+919787240999"
+                className="inline-flex items-center gap-3 text-left"
+              >
+                <span className="icon-chip h-11 w-11">
+                  <Phone size={17} aria-hidden="true" />
+                </span>
+                <span className="flex flex-col">
+                  <span className="text-sm text-slate-500">Call us anytime</span>
+                  <span className="phone-number font-bold text-gray-900">+91 97872 40999</span>
+                </span>
+              </a>
+              <a
+                href="tel:+917397733223"
+                className="inline-flex items-center gap-3 text-left"
+              >
+                <span className="icon-chip h-11 w-11">
+                  <Phone size={17} aria-hidden="true" />
+                </span>
+                <span className="flex flex-col">
+                  <span className="text-sm text-slate-500">Call us anytime</span>
+                  <span className="phone-number font-bold text-gray-900">+91 73977 33223</span>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

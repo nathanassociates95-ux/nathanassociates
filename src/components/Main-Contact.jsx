@@ -86,8 +86,23 @@ const ContactSection = ({ withHeading = true }) => {
                       <span className="text-xs font-medium uppercase tracking-wider text-slate-500">
                         Telephone
                       </span>
-                      <span className="font-semibold text-gray-900 group-hover:text-brand-orange transition-colors">
+                      <span className="phone-number font-semibold text-gray-900 group-hover:text-brand-orange transition-colors">
                         +91 97872 40999
+                      </span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+917397733223" className="group flex items-center gap-4">
+                    <span className="icon-chip-soft">
+                      <Phone size={17} aria-hidden="true" />
+                    </span>
+                    <span className="flex flex-col leading-tight">
+                      <span className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                        Telephone
+                      </span>
+                      <span className="phone-number font-semibold text-gray-900 group-hover:text-brand-orange transition-colors">
+                        +91 73977 33223
                       </span>
                     </span>
                   </a>
@@ -141,7 +156,7 @@ const ContactSection = ({ withHeading = true }) => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Nathan Associates head office location map"
+                title="NATHAN ASSOCIATES head office location map"
               />
             </div>
           </div>

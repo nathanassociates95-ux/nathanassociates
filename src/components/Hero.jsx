@@ -21,14 +21,14 @@ export const Hero = () => {
             </span>
           </span>
           <h1 className="hero-content-rise text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-[3.5rem] lg:text-6xl" style={{ animationDelay: "100ms" }}>
-            Precision Surveying &amp;
+            Precision Surveyers &amp;
             <br />
             Project Services,
             <br />
             Delivered Right
           </h1>
           <p className="hero-content-rise mt-6 max-w-2xl text-base leading-relaxed text-gray-200 md:text-lg" style={{ animationDelay: "200ms" }}>
-            From precise site measurement to approvals and technical consultancy, Nathan Associates
+            From precise site measurement to approvals and technical consultancy, NATHAN ASSOCIATES
             turns accurate information into clearer project decisions - in Tamil Nadu and across
             India.
           </p>

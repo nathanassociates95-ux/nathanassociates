@@ -59,13 +59,18 @@ export const Navbar = () => {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled || open
-          ? "border-b border-white/15 bg-[linear-gradient(90deg,rgba(10,27,42,0.98),rgba(10,27,42,0.96),rgba(10,27,42,0.93))] shadow-[0_12px_32px_-16px_rgba(15,31,46,0.6)] backdrop-blur-[10px]"
+          ? "border-b border-white/15 bg-brand-navy shadow-[0_12px_32px_-16px_rgba(15,31,46,0.6)]"
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <div className="container-site flex h-16 items-center justify-between gap-4 md:h-[72px]">
+      <div
+        className={cn(
+          "container-site flex items-center justify-between gap-4 transition-[height] duration-300",
+          scrolled ? "h-14 md:h-[60px]" : "h-16 md:h-[72px]",
+        )}
+      >
         {/* Brand */}
-        <Link href="/" className="flex min-w-0 items-center gap-2.5" aria-label="Nathan Associates - Home">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5" aria-label="NATHAN ASSOCIATES - Home">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white p-1 shadow-sm md:h-14 md:w-14">
             <img
               src="/images/logo-dark.png"
@@ -75,7 +80,7 @@ export const Navbar = () => {
           </span>
           <span className="flex min-w-0 flex-col leading-tight">
             <span className="nav-micro-shadow text-base font-bold tracking-tight text-white sm:text-lg md:text-xl">
-              Nathan Associates
+              NATHAN ASSOCIATES
             </span>
             <span className="nav-micro-shadow text-[11px] font-semibold uppercase tracking-[0.16em] break-words text-brand-orange">
               Survey · Approvals · Consultancy
@@ -103,20 +108,30 @@ export const Navbar = () => {
 
         {/* Phone CTA + mobile toggle */}
         <div className="flex items-center gap-4">
-          <a
-            href="tel:+919787240999"
-            className="hidden items-center gap-2.5 rounded-lg border border-white/40 bg-brand-navy/40 py-1.5 pl-1.5 pr-3.5 backdrop-blur-sm transition-colors hover:border-brand-orange md:inline-flex lg:flex"
-          >
+          <div className="hidden items-center gap-2.5 rounded-lg border border-white/40 bg-brand-navy/60 py-1.5 pl-1.5 pr-3.5 transition-colors hover:border-brand-orange md:flex">
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-brand-orange text-white">
               <Phone size={15} aria-hidden="true" />
             </span>
             <span className="flex flex-col items-start leading-tight">
-              <span className="nav-micro-shadow text-[11px] font-semibold uppercase tracking-wider text-white">
+              <span className="nav-micro-shadow text-[10px] font-semibold uppercase tracking-wider text-white/90">
                 Call Us
               </span>
-              <span className="nav-micro-shadow text-sm font-bold text-white">+91 97872 40999</span>
+              <span className="flex items-center gap-2.5">
+                <a
+                  href="tel:+919787240999"
+                  className="phone-number nav-micro-shadow text-[13px] font-bold text-white transition-colors hover:text-brand-orange"
+                >
+                  +91 97872 40999
+                </a>
+                <a
+                  href="tel:+917397733223"
+                  className="phone-number nav-micro-shadow text-[13px] font-bold text-white transition-colors hover:text-brand-orange"
+                >
+                  +91 73977 33223
+                </a>
+              </span>
             </span>
-          </a>
+          </div>
 
           <button
             type="button"
@@ -155,10 +170,17 @@ export const Navbar = () => {
           ))}
           <a
             href="tel:+919787240999"
-            className="mt-4 inline-flex items-center gap-2 text-base font-semibold text-brand-orange"
+            className="phone-number mt-4 inline-flex items-center gap-2 text-base font-semibold text-brand-orange"
           >
             <Phone size={16} aria-hidden="true" />
             +91 97872 40999
+          </a>
+          <a
+            href="tel:+917397733223"
+            className="phone-number mt-2 inline-flex items-center gap-2 text-base font-semibold text-brand-orange"
+          >
+            <Phone size={16} aria-hidden="true" />
+            +91 73977 33223
           </a>
         </nav>
       </div>
