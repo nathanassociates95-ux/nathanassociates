@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service, singleLine = false }) => {
   if (!service) {
     return null;
   }
@@ -33,12 +34,22 @@ const ServiceCard = ({ service }) => {
 
         <ul className="mb-4 mt-4 space-y-3">
           {points.map((point, idx) => (
-            <li key={idx} className="flex items-start gap-2">
+            <li key={idx} className={cn("flex gap-2", singleLine ? "items-center" : "items-start")}>
               <CheckCircle2
-                className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange"
+                className={cn(
+                  "h-4 w-4 shrink-0 text-brand-orange",
+                  !singleLine && "mt-0.5",
+                )}
                 aria-hidden="true"
               />
-              <span className="text-sm font-medium leading-snug text-slate-700">{point}</span>
+              <span
+                className={cn(
+                  "text-sm font-medium leading-snug text-slate-700",
+                  singleLine && "whitespace-nowrap",
+                )}
+              >
+                {point}
+              </span>
             </li>
           ))}
         </ul>
