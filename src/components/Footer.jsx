@@ -153,6 +153,7 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-5 text-sm text-gray-400 md:flex-row">
           <p>© {new Date().getFullYear()} NATHAN ASSOCIATES. All rights reserved.</p>
+          <p>Website Developed by AS info Tech</p>
         </div>
       </div>
     </footer>
