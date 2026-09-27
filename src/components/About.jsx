@@ -71,33 +71,33 @@ const AboutSection = () => {
             ))}
           </ul>
 
-          <div className="mt-7 flex flex-col gap-6 sm:flex-row sm:items-center">
+          <div className="mt-7 flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-center">
             <Link href="/#contact" className="btn btn-primary">
               Make an Enquiry
             </Link>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
               <a
                 href="tel:+919787240999"
-                className="inline-flex items-center gap-3 text-left"
+                className="inline-flex shrink-0 items-center gap-3 text-left"
               >
                 <span className="icon-chip h-11 w-11">
                   <Phone size={17} aria-hidden="true" />
                 </span>
-                <span className="flex flex-col">
+                <span className="flex shrink-0 flex-col">
                   <span className="text-sm text-slate-500">Call us anytime</span>
-                  <span className="phone-number font-bold text-gray-900">+91 97872 40999</span>
+                  <span className="phone-number whitespace-nowrap font-bold text-gray-900">+91 97872 40999</span>
                 </span>
               </a>
               <a
                 href="tel:+917397733223"
-                className="inline-flex items-center gap-3 text-left"
+                className="inline-flex shrink-0 items-center gap-3 text-left"
               >
                 <span className="icon-chip h-11 w-11">
                   <Phone size={17} aria-hidden="true" />
                 </span>
-                <span className="flex flex-col">
+                <span className="flex shrink-0 flex-col">
                   <span className="text-sm text-slate-500">Call us anytime</span>
-                  <span className="phone-number font-bold text-gray-900">+91 73977 33223</span>
+                  <span className="phone-number whitespace-nowrap font-bold text-gray-900">+91 73977 33223</span>
                 </span>
               </a>
             </div>
