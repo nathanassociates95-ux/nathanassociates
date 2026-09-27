@@ -109,7 +109,7 @@ const ContactSection = ({ withHeading = true }) => {
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/919787733223?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20Nathan%20Associates%20services"
+                    href="https://wa.me/919787240999?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20Nathan%20Associates%20services"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-4"

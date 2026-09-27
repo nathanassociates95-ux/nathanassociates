@@ -156,7 +156,7 @@ export default function DigitalSurveyMarkingPage() {
         summary={service.summary}
         image={service.heroImage}
         alt="Surveyor working with a GPS instrument on site"
-        whatsapp="919787133223"
+        whatsapp="919787240999"
         waText="Hello, I would like to enquire about Digital Survey & Marking"
       />
 
@@ -246,7 +246,7 @@ export default function DigitalSurveyMarkingPage() {
         title="Need a survey or marking done right?"
         description="Tell us about your site and what you need - our team will come back with a clear scope and a practical plan."
         primaryLabel="Request a Survey"
-        whatsapp="919787133223"
+        whatsapp="919787240999"
         waText="Hello, I would like to enquire about Digital Survey & Marking"
       />
     </>

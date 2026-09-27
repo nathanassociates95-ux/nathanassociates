@@ -22,7 +22,7 @@ export const SERVICES = [
       "On-site marking for construction and layout work",
       "Support for land subdivision, roads and infrastructure",
     ],
-    whatsapp: "+917397133223",
+    whatsapp: "+919787240999",
     href: "/services/digital-survey-marking",
   },
   {
@@ -70,7 +70,7 @@ export const SERVICES = [
       "Reliable quantity and valuation assistance",
       "Project management for coordinated delivery",
     ],
-    whatsapp: "+919787248999",
+    whatsapp: "+919787240999",
     href: "/services/consultancy",
   },
 ].map((service) => ({
