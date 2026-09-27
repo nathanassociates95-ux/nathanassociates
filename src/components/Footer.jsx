@@ -52,7 +52,7 @@ const Footer = () => {
               href="https://www.facebook.com/NathanAssociatesOfficial"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-brand-orange"
+              className="inline-flex items-center p-2 text-gray-400 transition-colors hover:text-brand-orange md:inline md:p-0"
               aria-label="Nathan Associates on Facebook"
             >
               <Facebook size={18} />
@@ -61,7 +61,7 @@ const Footer = () => {
               href="https://www.instagram.com/nathanassociates/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-brand-orange"
+              className="inline-flex items-center p-2 text-gray-400 transition-colors hover:text-brand-orange md:inline md:p-0"
               aria-label="Nathan Associates on Instagram"
             >
               <Instagram size={18} />

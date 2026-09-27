@@ -65,7 +65,7 @@ export const Navbar = () => {
     >
       <div className="container-site flex h-16 items-center justify-between gap-4 md:h-[72px]">
         {/* Brand */}
-        <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Nathan Associates - Home">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5" aria-label="Nathan Associates - Home">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white p-1 shadow-sm md:h-14 md:w-14">
             <img
               src="/images/logo-dark.png"
@@ -73,11 +73,11 @@ export const Navbar = () => {
               className="h-full w-full object-contain"
             />
           </span>
-          <span className="flex flex-col leading-tight">
-            <span className="nav-micro-shadow text-lg font-bold tracking-tight text-white md:text-xl">
+          <span className="flex min-w-0 flex-col leading-tight">
+            <span className="nav-micro-shadow text-base font-bold tracking-tight text-white sm:text-lg md:text-xl">
               Nathan Associates
             </span>
-            <span className="nav-micro-shadow text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-orange">
+            <span className="nav-micro-shadow text-[11px] font-semibold uppercase tracking-[0.16em] break-words text-brand-orange">
               Survey · Approvals · Consultancy
             </span>
           </span>
@@ -120,7 +120,7 @@ export const Navbar = () => {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 lg:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -135,8 +135,8 @@ export const Navbar = () => {
       <div
         id="mobile-menu"
         className={cn(
-          "overflow-hidden border-t border-white/10 bg-brand-navy transition-all duration-300 lg:hidden",
-          open ? "max-h-[420px] opacity-100" : "max-h-0 border-t-0 opacity-0",
+          "border-t border-white/10 bg-brand-navy transition-all duration-300 lg:hidden",
+          open ? "max-h-[420px] overflow-y-auto opacity-100" : "max-h-0 overflow-hidden border-t-0 opacity-0",
         )}
       >
         <nav className="flex flex-col px-5 py-4" aria-label="Mobile">
