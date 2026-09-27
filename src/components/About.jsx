@@ -21,16 +21,16 @@ const AboutSection = () => {
     <section id="about" className="bg-white py-16 md:py-20">
       <div className="container-site grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Imagery */}
-        <div className="relative mx-auto w-full max-w-md">
+        <div className="relative w-full">
           <div className="overflow-hidden rounded-2xl">
             <img
               src="/img/whoweare.png"
               alt="NATHAN ASSOCIATES at work"
-              className="aspect-[4/5] w-full object-cover"
+              className="aspect-[3/2] w-full object-cover"
             />
           </div>
 
-          <div className="absolute -bottom-6 -right-4 overflow-hidden rounded-xl border-4 border-white shadow-xl w-[46%] sm:-right-6">
+          <div className="absolute bottom-4 right-4 w-[30%] max-w-[170px] overflow-hidden rounded-xl border-4 border-white shadow-xl lg:w-[32%] lg:max-w-[190px]">
             <img
               src="/images/about2.png"
               alt="Surveying team discussing plans on site"
