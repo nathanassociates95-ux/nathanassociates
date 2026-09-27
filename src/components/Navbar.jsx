@@ -13,10 +13,22 @@ const NAV_LINKS = [
   { name: "Contact Us", href: "/#contact" },
 ];
 
+const SECTION_IDS = ["top", "about", "services", "contact"];
+
+const HREF_TO_SECTION = {
+  "/": "top",
+  "/#about": "about",
+  "/#services": "services",
+  "/#contact": "contact",
+};
+
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("top");
   const pathname = usePathname();
+
+  const isHomePage = pathname === "/" || pathname === "/home";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,9 +41,52 @@ export const Navbar = () => {
     setOpen(false);
   }, [pathname]);
 
-  const isHomePage = pathname === "/" || pathname === "/home";
+  useEffect(() => {
+    if (!isHomePage) {
+      setActiveSection(null);
+      return;
+    }
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      setActiveSection(SECTION_IDS.includes(hash) ? hash : "top");
+    };
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, [isHomePage]);
 
-  const isActive = (href) => href === "/" && isHomePage;
+  useEffect(() => {
+    if (!isHomePage) return;
+
+    const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(Boolean);
+    if (!sections.length) return;
+
+    const inView = new Set();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) inView.add(entry.target.id);
+          else inView.delete(entry.target.id);
+        }
+        const current = sections.find((section) => inView.has(section.id));
+        if (current) setActiveSection(current.id);
+      },
+      { rootMargin: "-30% 0px -55% 0px", threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [isHomePage]);
+
+  const isActive = (href) => {
+    if (!isHomePage) {
+      return (
+        href === "/#services" &&
+        (pathname === "/services" || pathname.startsWith("/services/"))
+      );
+    }
+    return activeSection === HREF_TO_SECTION[href];
+  };
 
   const prefersReducedMotion = () =>
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -40,6 +95,7 @@ export const Navbar = () => {
     const behavior = prefersReducedMotion() ? "auto" : "smooth";
     if (isHomePage && href === "/") {
       e.preventDefault();
+      setActiveSection("top");
       window.scrollTo({ top: 0, behavior });
       window.history.replaceState(null, "", "/");
       return;
@@ -49,6 +105,7 @@ export const Navbar = () => {
     const targetIsHome = targetPath === "" || targetPath === "/" || targetPath === "/home";
     if (isHomePage && targetIsHome && hash) {
       e.preventDefault();
+      setActiveSection(hash);
       document.getElementById(hash)?.scrollIntoView({ behavior, block: "start" });
       window.history.replaceState(null, "", `/#${hash}`);
     }
@@ -165,11 +222,15 @@ export const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
               onClick={(e) => {
                 handleAnchorClick(e, link.href);
                 setOpen(false);
               }}
-              className="border-b border-white/10 py-3.5 text-base font-medium text-gray-200 transition-colors hover:text-brand-orange"
+              className={cn(
+                "border-b border-white/10 py-3.5 text-base font-medium transition-colors hover:text-brand-orange",
+                isActive(link.href) ? "text-brand-orange" : "text-gray-200",
+              )}
             >
               {link.name}
             </Link>
