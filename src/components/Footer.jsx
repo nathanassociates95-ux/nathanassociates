@@ -33,7 +33,9 @@ const Footer = () => {
         {/* Brand */}
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-2.5" aria-label="Nathan Associates - Home">
-            <img src="/images/logo-01.svg" alt="" className="h-10 w-10 object-contain" />
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-0.5">
+              <img src="/images/logo-dark.png" alt="" className="h-full w-full object-contain" />
+            </span>
             <span className="flex flex-col leading-tight">
               <span className="text-lg font-bold tracking-tight">Nathan Associates</span>
               <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-brand-orange">
@@ -106,15 +108,15 @@ const Footer = () => {
           </h4>
           <ul className="space-y-3 text-sm text-gray-300">
             <li>
-              <a href="tel:+919787240999" className="flex items-center gap-2.5 transition-colors hover:text-brand-orange">
+              <a href="tel:+917397733223" className="flex items-center gap-2.5 transition-colors hover:text-brand-orange">
                 <Phone size={15} className="text-brand-orange shrink-0" aria-hidden="true" />
-                +91 97872 40999
+                +91 73977 33223
               </a>
             </li>
             <li>
-              <a href="tel:+919787250999" className="flex items-center gap-2.5 transition-colors hover:text-brand-orange">
+              <a href="tel:+919787248999" className="flex items-center gap-2.5 transition-colors hover:text-brand-orange">
                 <Phone size={15} className="text-brand-orange shrink-0" aria-hidden="true" />
-                +91 97872 50999
+                +91 97872 48999
               </a>
             </li>
             <li>

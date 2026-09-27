@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import CapabilityStrip from "@/components/CapabilityStrip";
 import ProcessSection from "@/components/ProcessSection";
 import ServicesSection from "@/components/ServicesSection";
-import CapabilityMatrix from "@/components/CapabilityMatrix";
 import TechnicalFlow from "@/components/TechnicalFlow";
 import WhySection from "@/components/WhySection";
 import ContactSection from "@/components/Main-Contact";
@@ -56,7 +55,6 @@ export default function Home() {
       <AboutSection />
       <ProcessSection />
       <ServicesSection />
-      <CapabilityMatrix />
       <TechnicalFlow />
       <WhySection />
       <ContactSection />

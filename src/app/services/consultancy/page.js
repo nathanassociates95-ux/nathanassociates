@@ -138,7 +138,7 @@ export default function ConsultancyPage() {
         summary={service.summary}
         image={service.heroImage}
         alt="Consultancy and technical work"
-        whatsapp="919787250999"
+        whatsapp="919787248999"
         waText="Hello, I would like to enquire about Consultancy"
       />
 
@@ -162,7 +162,7 @@ export default function ConsultancyPage() {
           <div className="order-1 lg:order-2">
             <div className="card overflow-hidden p-0">
               <img
-                src="/images/consulting.jpg"
+                src="/img/consulting.png"
                 alt="Consultancy and design work in progress"
                 className="aspect-[4/3] w-full object-cover"
               />
@@ -229,7 +229,7 @@ export default function ConsultancyPage() {
         title="Let's discuss your project"
         description="Whether you need a soil test, a valuation, a design or full project coordination - tell us what you are planning and we will advise on the right first step."
         primaryLabel="Start a Conversation"
-        whatsapp="919787250999"
+        whatsapp="919787248999"
         waText="Hello, I would like to enquire about Consultancy"
       />
     </>

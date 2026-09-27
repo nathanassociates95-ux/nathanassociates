@@ -101,12 +101,12 @@ fbq('track', 'PageView');`,
               "@type": "Organization",
               name: "Nathan Associates India",
               url: "https://nathanassociates.in/", // ✅ Replace
-              logo: "https://nathanassociates.in/images/logo.svg", // ✅ Replace
+              logo: "https://nathanassociates.in/images/logo-dark.png", // ✅ Replace
               description:
                 "Digital Survey & Marking, Approvals and Consultancy - accurate, reliable and delivered right.",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+91-9787240999", // ✅ Replace
+                telephone: "+91-7397733223", // ✅ Replace
                 contactType: "services",
                 areaServed: "IN",
                 availableLanguage: "English",

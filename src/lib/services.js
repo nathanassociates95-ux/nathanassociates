@@ -14,7 +14,7 @@ export const SERVICES = [
       "Boundary, Layout & Sub Division Marking",
       "DGPS, Drone / Airline, Road & Pipeline Survey",
     ],
-    image: "/images/digital-survey.webp",
+    image: "/img/surbey.png",
     heroImage: "/images/dgps.jpg",
     highlights: [
       "Accurate field data captured with modern instruments",
@@ -22,7 +22,7 @@ export const SERVICES = [
       "On-site marking for construction and layout work",
       "Support for land subdivision, roads and infrastructure",
     ],
-    whatsapp: "+917397733223",
+    whatsapp: "+917397133223",
     href: "/services/digital-survey-marking",
   },
   {
@@ -46,7 +46,7 @@ export const SERVICES = [
       "Help preparing information and submissions",
       "Practical support for project planning",
     ],
-    whatsapp: "+917397733223",
+    whatsapp: "+919787240999",
     href: "/services/approvals",
   },
   {
@@ -62,7 +62,7 @@ export const SERVICES = [
       "Quantity Survey, Valuation & 2D / 3D Design",
       "Structural, BIM, GIS / DTM & PMC",
     ],
-    image: "/images/consulting.jpg",
+    image: "/img/consulting.png",
     heroImage: "/images/consulting.png",
     highlights: [
       "Specialist inputs before construction begins",
@@ -70,7 +70,7 @@ export const SERVICES = [
       "Reliable quantity and valuation assistance",
       "Project management for coordinated delivery",
     ],
-    whatsapp: "+919787250999",
+    whatsapp: "+919787248999",
     href: "/services/consultancy",
   },
 ].map((service) => ({

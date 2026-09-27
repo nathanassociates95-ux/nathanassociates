@@ -156,7 +156,7 @@ export default function DigitalSurveyMarkingPage() {
         summary={service.summary}
         image={service.heroImage}
         alt="Surveyor working with a GPS instrument on site"
-        whatsapp="919787240999"
+        whatsapp="919787133223"
         waText="Hello, I would like to enquire about Digital Survey & Marking"
       />
 
@@ -180,7 +180,7 @@ export default function DigitalSurveyMarkingPage() {
           <div className="order-1 lg:order-2">
             <div className="card overflow-hidden p-0">
               <img
-                src="/images/digital-survey.webp"
+                src="/img/surbey.png"
                 alt="Digital surveying equipment being set up in the field"
                 className="aspect-[4/3] w-full object-cover"
               />
@@ -246,7 +246,7 @@ export default function DigitalSurveyMarkingPage() {
         title="Need a survey or marking done right?"
         description="Tell us about your site and what you need - our team will come back with a clear scope and a practical plan."
         primaryLabel="Request a Survey"
-        whatsapp="919787240999"
+        whatsapp="919787133223"
         waText="Hello, I would like to enquire about Digital Survey & Marking"
       />
     </>

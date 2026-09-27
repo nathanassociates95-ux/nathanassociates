@@ -24,8 +24,8 @@ const AboutSection = () => {
         <div className="relative mx-auto w-full max-w-md">
           <div className="overflow-hidden rounded-2xl">
             <img
-              src="/images/about-home.png"
-              alt="Surveyor looking through an instrument on site"
+              src="/img/whoweare.png"
+              alt="Nathan Associates at work"
               className="aspect-[4/5] w-full object-cover"
             />
           </div>
@@ -85,7 +85,7 @@ const AboutSection = () => {
               Make an Enquiry
             </Link>
             <a
-              href="tel:+919787240999"
+              href="tel:+917397733223"
               className="inline-flex items-center gap-3 text-left"
             >
               <span className="icon-chip h-11 w-11">
@@ -93,7 +93,7 @@ const AboutSection = () => {
               </span>
               <span className="flex flex-col">
                 <span className="text-sm text-slate-500">Call us anytime</span>
-                <span className="font-bold text-gray-900">+91 97872 40999</span>
+                <span className="font-bold text-gray-900">+91 73977 33223</span>
               </span>
             </a>
           </div>

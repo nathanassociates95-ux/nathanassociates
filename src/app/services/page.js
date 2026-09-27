@@ -68,7 +68,7 @@ export default function ServicesPage() {
       <EnquiryCta
         title="Not sure which service you need?"
         description="Tell us about your land, building or project requirement and our team will point you in the right direction - no obligation."
-        whatsapp="919787240999"
+        whatsapp="919787733223"
         waText="Hello, I would like to enquire about Nathan Associates services"
       />
     </>

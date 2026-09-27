@@ -6,12 +6,12 @@ export const Hero = () => {
   return (
     <section id="top" className="relative overflow-hidden bg-brand-navy">
       <img
-        src="/images/banner.png"
+        src="/img/Hero-section.png"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-100"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-40 md:opacity-50"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/85 via-brand-navy/60 to-brand-navy/25 lg:via-brand-navy/40 lg:to-brand-navy/5" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/65 to-brand-navy/20 lg:via-brand-navy/45 lg:to-brand-navy/5" />
 
       <div className="container-site relative z-10 flex min-h-[480px] flex-col justify-center pb-16 pt-32 md:min-h-[100dvh] md:pt-32">
         <div className="max-w-3xl">
