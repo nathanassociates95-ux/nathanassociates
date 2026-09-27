@@ -104,7 +104,7 @@ export const Navbar = () => {
         {/* Phone CTA + mobile toggle */}
         <div className="flex items-center gap-4">
           <a
-            href="tel:+917397733223"
+            href="tel:+919787240999"
             className="hidden items-center gap-2.5 rounded-lg border border-white/40 bg-brand-navy/40 py-1.5 pl-1.5 pr-3.5 backdrop-blur-sm transition-colors hover:border-brand-orange md:inline-flex lg:flex"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-brand-orange text-white">
@@ -114,7 +114,7 @@ export const Navbar = () => {
               <span className="nav-micro-shadow text-[11px] font-semibold uppercase tracking-wider text-white">
                 Call Us
               </span>
-              <span className="nav-micro-shadow text-sm font-bold text-white">+91 73977 33223</span>
+              <span className="nav-micro-shadow text-sm font-bold text-white">+91 97872 40999</span>
             </span>
           </a>
 
@@ -154,11 +154,11 @@ export const Navbar = () => {
             </Link>
           ))}
           <a
-            href="tel:+917397733223"
+            href="tel:+919787240999"
             className="mt-4 inline-flex items-center gap-2 text-base font-semibold text-brand-orange"
           >
             <Phone size={16} aria-hidden="true" />
-            +91 73977 33223
+            +91 97872 40999
           </a>
         </nav>
       </div>

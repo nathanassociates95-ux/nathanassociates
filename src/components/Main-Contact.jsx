@@ -78,7 +78,7 @@ const ContactSection = ({ withHeading = true }) => {
             <div className="card p-6 md:p-7">
               <ul className="space-y-4">
                 <li>
-                  <a href="tel:+917397733223" className="group flex items-center gap-4">
+                  <a href="tel:+919787240999" className="group flex items-center gap-4">
                     <span className="icon-chip-soft">
                       <Phone size={17} aria-hidden="true" />
                     </span>
@@ -87,7 +87,7 @@ const ContactSection = ({ withHeading = true }) => {
                         Telephone
                       </span>
                       <span className="font-semibold text-gray-900 group-hover:text-brand-orange transition-colors">
-                        +91 73977 33223
+                        +91 97872 40999
                       </span>
                     </span>
                   </a>

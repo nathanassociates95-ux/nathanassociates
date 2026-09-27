@@ -76,7 +76,7 @@ const AboutSection = () => {
               Make an Enquiry
             </Link>
             <a
-              href="tel:+917397733223"
+              href="tel:+919787240999"
               className="inline-flex items-center gap-3 text-left"
             >
               <span className="icon-chip h-11 w-11">
@@ -84,7 +84,7 @@ const AboutSection = () => {
               </span>
               <span className="flex flex-col">
                 <span className="text-sm text-slate-500">Call us anytime</span>
-                <span className="font-bold text-gray-900">+91 73977 33223</span>
+                <span className="font-bold text-gray-900">+91 97872 40999</span>
               </span>
             </a>
           </div>

@@ -106,7 +106,7 @@ fbq('track', 'PageView');`,
                 "Digital Survey & Marking, Approvals and Consultancy - accurate, reliable and delivered right.",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+91-7397733223", // ✅ Replace
+                telephone: "+91-9787240999", // ✅ Replace
                 contactType: "services",
                 areaServed: "IN",
                 availableLanguage: "English",
