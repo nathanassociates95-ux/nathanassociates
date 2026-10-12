@@ -18,7 +18,7 @@ import SectionHeading from "@/components/SectionHeading";
 import IconGrid from "@/components/IconGrid";
 import NumberedSteps from "@/components/NumberedSteps";
 import CheckPanel from "@/components/CheckPanel";
-import ServiceScope from "@/components/ServiceScope";
+import ServiceCardGrid from "@/components/ServiceCardGrid";
 import EnquiryCta from "@/components/EnquiryCta";
 
 export const metadata = {
@@ -198,7 +198,7 @@ export default function ApprovalsPage() {
             title="What We Cover"
             description="Every category below is a service we support. Each one explains what it concerns and when a client typically needs it."
           />
-          <ServiceScope groups={scope} />
+          <ServiceCardGrid slug="approvals" />
         </div>
       </section>
 

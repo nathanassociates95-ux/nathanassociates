@@ -17,7 +17,7 @@ import SectionHeading from "@/components/SectionHeading";
 import IconGrid from "@/components/IconGrid";
 import NumberedSteps from "@/components/NumberedSteps";
 import CheckPanel from "@/components/CheckPanel";
-import ServiceScope from "@/components/ServiceScope";
+import SurveyServicesGrid from "@/components/SurveyServicesGrid";
 import EnquiryCta from "@/components/EnquiryCta";
 
 export const metadata = {
@@ -191,17 +191,8 @@ export default function DigitalSurveyMarkingPage() {
         </div>
       </section>
 
-      {/* Service scope */}
-      <section className="bg-gray-50 py-16 md:py-20">
-        <div className="container-site">
-          <SectionHeading
-            eyebrow="What We Provide"
-            title="Service Scope &amp; Survey Capabilities"
-            description="Each capability below is explained in plain language - what it is, and the kind of project it is normally needed for."
-          />
-          <ServiceScope groups={scope} />
-        </div>
-      </section>
+      {/* Visual service cards */}
+      <SurveyServicesGrid />
 
       {/* Applications */}
       <section className="bg-white py-16 md:py-20">

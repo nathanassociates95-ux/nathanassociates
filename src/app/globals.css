@@ -193,6 +193,93 @@ html {
   .icon-chip-soft {
     @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#fdf2e2] text-brand-orange-dark;
   }
+
+  /*
+    Service card media area (shared by all three service grids).
+    Full-width at the top of each dark card; height fixed well above the old
+    strip so drawings, plans and documents are immediately recognisable:
+    mobile 170px, tablet 190px, desktop 215px. Images are fitted, never
+    stretched: object-contain for drawings/plans/documents, object-cover for
+    photographs. A faint measuring-grid backdrop keeps transparent drawings
+    readable without adding edge padding that would shrink the image.
+  */
+  .svc-media {
+    @apply relative block w-full overflow-hidden border-b border-white/10;
+    height: 170px; /* mobile: 160-200px */
+    background-color: rgba(255, 255, 255, 0.06);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+  @media (min-width: 640px) {
+    .svc-media {
+      height: 190px; /* tablet: 160-210px */
+    }
+  }
+  @media (min-width: 1024px) {
+    .svc-media {
+      height: 215px; /* desktop: 190-240px */
+    }
+  }
+
+  .svc-media-img {
+    @apply h-full w-full transition-transform duration-500 ease-out;
+    will-change: transform;
+  }
+  /* Contained drawings: tiny edge padding only, so essential labels and
+     boundaries never touch the frame edge while the image stays large. */
+  .svc-media-img-contain {
+    padding: 4px;
+  }
+
+  /*
+    Micro-thumbnail beside each detailed sub-service entry in ServiceScope.
+    Sized large enough that survey plans, approval documents and technical
+  /* Restrained "measuring sweep" across the card image on hover / focus */
+  .svc-sweep {
+    position: absolute;
+    inset-block: 0;
+    left: -40%;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.18), transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.9s ease-out, opacity 0.3s ease-out;
+  }
+
+  .svc-card:focus-visible {
+    outline: 2px solid #6ee7b7;
+    outline-offset: 2px;
+  }
+  .svc-card:hover .svc-media-img,
+  .svc-card:focus-visible .svc-media-img {
+    transform: scale(1.05);
+  }
+  .svc-card:hover .svc-sweep,
+  .svc-card:focus-visible .svc-sweep {
+    opacity: 1;
+    transform: translateX(350%);
+  }
+  .svc-card:hover .svc-arrow,
+  .svc-card:focus-visible .svc-arrow {
+    transform: translateX(3px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .svc-media-img,
+    .svc-sweep,
+    .svc-arrow {
+      transition: none;
+    }
+    .svc-card:hover .svc-media-img,
+    .svc-card:focus-visible .svc-media-img,
+    .svc-card:hover .svc-sweep,
+    .svc-card:focus-visible .svc-sweep,
+    .svc-card:hover .svc-arrow,
+    .svc-card:focus-visible .svc-arrow {
+      transform: none;
+    }
+  }
 }
 
 @layer utilities {

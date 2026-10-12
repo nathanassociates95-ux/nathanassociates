@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import ServiceVisual from "./ServiceVisual";
 
 const ServiceCard = ({ service, detailed = false }) => {
   if (!service) {
@@ -14,13 +15,8 @@ const ServiceCard = ({ service, detailed = false }) => {
       href={service.href || "/services"}
       className="card card-hover group flex flex-col overflow-hidden"
     >
-      <div className="relative aspect-[16/9] w-full overflow-hidden">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/30 to-transparent" aria-hidden="true" />
+      <div className="relative aspect-[16/9] w-full overflow-hidden bg-brand-navy-deep">
+        <ServiceVisual service={service} />
       </div>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">

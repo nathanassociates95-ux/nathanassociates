@@ -16,7 +16,7 @@ import SectionHeading from "@/components/SectionHeading";
 import IconGrid from "@/components/IconGrid";
 import NumberedSteps from "@/components/NumberedSteps";
 import CheckPanel from "@/components/CheckPanel";
-import ServiceScope from "@/components/ServiceScope";
+import ServiceCardGrid from "@/components/ServiceCardGrid";
 import EnquiryCta from "@/components/EnquiryCta";
 
 export const metadata = {
@@ -181,7 +181,7 @@ export default function ConsultancyPage() {
             title="Consultancy Service Scope"
             description="Grouped by the stage of the project each service supports. Every service below is explained in plain language, with the typical reason a client needs it."
           />
-          <ServiceScope groups={scope} />
+          <ServiceCardGrid slug="consultancy" />
         </div>
       </section>
 
