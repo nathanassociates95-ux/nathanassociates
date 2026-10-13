@@ -116,28 +116,33 @@ export const SERVICE_MEDIA = {
  * disk, `contain` for technical drawings / diagrams / documents, `cover` for
  * photographic and rendered imagery (judged by content, not file extension).
  *
- * All 10 consultancy sub-services are covered 1:1 by the 10 saved assets;
- * entries without a mapping render without a thumbnail rather than using an
- * unrelated image as filler.
+ * Mapping verified against the files actually present in
+ * /public/services_img/Consultancy; 9 of the 10 sub-services covered 1:1 by
+ * the 9 saved assets. "Ground Water Survey" has no image in the folder, so it
+ * has no entry and renders without a thumbnail rather than using an unrelated
+ * image as filler.
+ *
+ * Content-verified draws: documents, certificates, plans and labelled
+ * infographics (valuation, drawings, GIS/DEM, soil-test methods, stability,
+ * PMC) use `contain` so no text or technical detail is cropped; full-frame
+ * photographs (soil-test site photo, quantity-survey site photo) use `cover`.
  */
 export const CONSULTANCY_MEDIA = {
   "Soil Test (SPT, ERT, CBT, Plate Load)": {
     dir: CONSULTANCY_MEDIA_DIR,
-    file: "soil_test.jpg",
-    alt: "Soil test conducted on site to assess bearing capacity",
-    fit: "cover",
+    file: "soil_test.png",
+    alt: "Soil test methods illustrated: plate load, standard penetration and cone penetration testing",
+    /* Labelled infographic — contained so none of the test steps or text
+       are cropped out of the tall image. */
+    fit: "contain",
   },
-  "Ground Water Survey": {
-    dir: CONSULTANCY_MEDIA_DIR,
-    file: "ground-water-investigation-survey-service.jpg",
-    alt: "Ground water investigation survey equipment working at a site",
-    fit: "cover",
-  },
+  /* No image currently in /public/services_img/Consultancy for
+     "Ground Water Survey" — no filler is used, so no entry. */
   "Quantity Survey": {
     dir: CONSULTANCY_MEDIA_DIR,
     file: "Quantitive_survey.png",
-    alt: "Quantity survey measurement sheet prepared from drawings",
-    fit: "contain",
+    alt: "Quantity survey measurement work carried out against project drawings",
+    fit: "cover",
   },
   "Land & Building Valuation": {
     dir: CONSULTANCY_MEDIA_DIR,
@@ -147,21 +152,22 @@ export const CONSULTANCY_MEDIA = {
   },
   "2D / 3D Plan & Designing": {
     dir: CONSULTANCY_MEDIA_DIR,
-    file: "2D_3D.ong.jpg",
+    file: "2D_3D.png",
     alt: "2D plan and 3D view of a proposed building design",
     fit: "contain",
   },
   "Structural / Architectural Designing": {
     dir: CONSULTANCY_MEDIA_DIR,
-    file: "Structural_ArchitecturalDesigning.jpg",
+    file: "Structural_ArchitecturalDesigning.png",
     alt: "Structural and architectural working drawings for a building",
     fit: "contain",
   },
   "BIM Model & Design": {
     dir: CONSULTANCY_MEDIA_DIR,
-    file: "BIM_Modelling.jpg",
-    alt: "Coordinated BIM model of a building shown digitally",
-    fit: "cover",
+    file: "BIM_Modelling.png",
+    alt: "Coordinated BIM model of a building services and structure shown digitally",
+    /* Technical model render — contained so the full model stays visible. */
+    fit: "contain",
   },
   "GIS Design & DTM Design": {
     dir: CONSULTANCY_MEDIA_DIR,
@@ -201,8 +207,23 @@ export const serviceMediaSrc = (file, dir = SERVICE_MEDIA_DIR) =>
  * for documents / plans / certificates, `cover` for full-bleed photographic
  * or rendered imagery (judged by content, not by file extension).
  *
- * All 12 approval sub-services are covered; entries without a mapping render
- * without a thumbnail rather than using an unrelated image.
+ * Mapping verified against the files actually present in
+ * /public/services_img/Approvals (every file inspected by content, not just
+ * filename); 11 of the 12 approval sub-services are covered 1:1 by the 11
+ * applicable saved assets. "HACA Approval" has no matching image in the
+ * folder, so it has no entry and renders without a thumbnail rather than
+ * using an unrelated image as filler. The file named HACA.png in that folder
+ * actually contains a DTCP "Regularisation of Unapproved Plots"
+ * acknowledgement letter, so — by content — it is assigned to "Unapproved
+ * plot regularisation" where it belongs, and deliberately NOT to HACA.
+ * (Note: Stability_certificate.png also sits in that folder but is a copy of
+ * the Consultancy "Stability Certificate" image, so it is deliberately NOT
+ * assigned to any approval sub-service.)
+ *
+ * Content-verified draws: certificate/document/plan-sheet and labelled
+ * infographic images use `contain` so no text or measurement detail is
+ * cropped; full-frame photographs (dtcp, industrial, regularisation) use
+ * `cover`.
  */
 export const APPROVALS_MEDIA = {
   "DTCP / RERA Approval": {
@@ -225,7 +246,7 @@ export const APPROVALS_MEDIA = {
   },
   "Industrial Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "industrial_approval.jpg",
+    file: "industrial_approval.png",
     alt: "Industrial site requiring factory and land-use approvals",
     fit: "cover",
   },
@@ -241,12 +262,9 @@ export const APPROVALS_MEDIA = {
     alt: "Municipal corporation approval application for urban property",
     fit: "contain",
   },
-  "HACA Approval": {
-    dir: APPROVALS_MEDIA_DIR,
-    file: "haca.png",
-    alt: "Hill area development authority approval certificate",
-    fit: "contain",
-  },
+  /* "HACA Approval": no image in the folder shows hill-area / HACA content
+     (the file named HACA.png is a DTCP unapproved-plot regularisation letter,
+     mapped below) — no entry, so no unrelated filler is used. */
   "NOC Certificate Approval": {
     dir: APPROVALS_MEDIA_DIR,
     file: "noc.png",
@@ -255,9 +273,11 @@ export const APPROVALS_MEDIA = {
   },
   "Land Conversion": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "land_conversion.png",
-    alt: "Land conversion record changing the classification of a plot",
-    fit: "cover",
+    file: "Land_Conversion.png",
+    alt: "Land conversion from agricultural use to non-agricultural development land",
+    /* Wide labelled banner — contained so the title and both land uses
+       stay fully visible. */
+    fit: "contain",
   },
   Regularisation: {
     dir: APPROVALS_MEDIA_DIR,
@@ -267,14 +287,16 @@ export const APPROVALS_MEDIA = {
   },
   "Single Plot Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "sigle_plot.png",
-    alt: "Single plot within a layout being approved in its own right",
-    fit: "cover",
+    file: "SinglePlotApproval.png",
+    alt: "Plot sub-division and amalgamation shown with an approved DTCP layout plan",
+    fit: "contain",
   },
   "Unapproved plot regularisation": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "Unapproved_plot_regularisation.png",
-    alt: "Records compiled to regularise a previously unapproved plot",
+    /* Exact filename on disk (content is a DTCP "Regularisation of
+       Unapproved Plots" acknowledgement letter — verified by inspection). */
+    file: "HACA.png",
+    alt: "DTCP acknowledgement letter for regularisation of an unapproved plot",
     fit: "contain",
   },
 };
