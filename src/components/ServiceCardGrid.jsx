@@ -64,9 +64,11 @@ const ServiceCardGrid = ({ slug }) => {
               <article
                 className="svc-card group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#141c26]"
               >
-                {/* Large image area — full card width, ~190-240px on desktop */}
-                <div className="svc-media">
-                  {media ? (
+                {/* Large image area — full card width, ~190-240px on desktop.
+                    Omitted when the sub-service has no matching image, so no
+                    empty media box or unrelated filler image is rendered. */}
+                {media ? (
+                  <div className="svc-media">
                     <img
                       src={serviceMediaSrc(media.file, media.dir)}
                       alt={media.alt}
@@ -78,9 +80,9 @@ const ServiceCardGrid = ({ slug }) => {
                           : "svc-media-img-contain object-contain object-center"
                       }`}
                     />
-                  ) : null}
-                  <span className="svc-sweep" aria-hidden="true" />
-                </div>
+                    <span className="svc-sweep" aria-hidden="true" />
+                  </div>
+                ) : null}
 
                 {/* Unified dark card body: title, explanation, details */}
                 <div className="flex flex-1 flex-col p-5">

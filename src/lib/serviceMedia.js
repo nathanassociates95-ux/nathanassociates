@@ -24,89 +24,89 @@ export const CONSULTANCY_MEDIA_DIR = "Consultancy";
  */
 export const SERVICE_MEDIA = {
   "Topographical Survey": {
-    file: "topographic-survey.png",
+    file: "topograhical.png",
     alt: "Topographic survey drawing showing site levels and physical features",
     fit: "contain",
   },
   "Contour Survey": {
-    file: "topographic-survey.png",
+    file: "Contuour_survey.png",
     alt: "Contour survey drawing showing how elevation changes across a site",
     fit: "contain",
   },
   "FMB Survey": {
-    file: "fmb_survay.jpg",
+    file: "FMB_survey.png",
     alt: "Field Measurement Book survey recording plot dimensions on site",
     fit: "contain",
   },
   "Boundary Survey / Marking": {
-    file: "Screenshot 2026-10-07 154042.png",
-    alt: "Site reference drawing used for boundary survey and marking",
-    fit: "contain",
+    file: "surveyor-boundary-marker-line-aerial-farmland-medium.jpg",
+    alt: "Surveyor with an instrument marking a plot boundary across farmland",
+    fit: "cover",
   },
   "Cadastral Survey": {
-    file: "cadscaderaljpg.jpg",
+    file: "cadastral.png",
     alt: "Cadastral survey map recording land parcels and their limits",
     fit: "contain",
   },
   "As-Built Survey": {
-    file: "As-build.jpg",
+    file: "AS_build.png",
     alt: "As-built survey record of completed construction work",
     fit: "contain",
   },
   "DGPS and GPS Survey": {
-    file: "dps_gps.png",
+    file: "DGPS.png",
     alt: "DGPS and GPS instrument used to capture satellite positioning data",
     fit: "contain",
   },
   "Drone / Airline Survey": {
-    file: "drone_survey.png",
+    file: "Drone_arilen.png",
     alt: "Drone capturing aerial survey imagery over a site",
     fit: "cover",
   },
   "Level Transfer Marking": {
-    file: "level_marking.png",
+    file: "level_transfe.png",
     alt: "Level transfer marking points set out on a construction site",
     fit: "contain",
   },
   "Pipeline Survey / Marking": {
-    file: "pipeline_survay_marking.jpg",
+    file: "pipeline_surveuy.png",
     alt: "Pipeline route survey and alignment marking on site",
     fit: "contain",
   },
   "Oil and Gas Survey": {
-    file: "oil_gas_survey.png",
+    file: "gas_pipeline.png",
     alt: "Survey and marking work inside an oil and gas project area",
     fit: "cover",
   },
   "Road Survey and Marking": {
-    file: "roaad_sruvy.png",
+    file: "road_safety.png",
     alt: "Road survey and marking of the planned alignment on site",
     fit: "contain",
   },
   "Construction Sector Marking": {
-    file: "constrution_sector.png",
+    file: "Construction_sector.png",
     alt: "Setting-out marking points, lines and levels for construction work",
     fit: "contain",
   },
   "Layout Survey and Marking": {
-    file: "layout_marking.png",
+    file: "Layout_marking (2).png",
     alt: "Layout marking of planned plots, roads and building lines",
     fit: "contain",
   },
-  "Sub Division Survey and Marking": {
-    file: "Sub Division Survey and Marking.png",
-    alt: "Sub division survey marking individual plot boundaries on site",
-    fit: "contain",
-  },
   "Bed Bolt Alignment Marking": {
-    file: "Bed Bolt Alignment Marking.jpg",
+    file: "Bed_bold_marking.png",
     alt: "Bed bolt alignment marking positions prepared before installation",
     fit: "cover",
   },
   "Petrol Bunk Marking / Survey": {
-    file: "Petrol Bunk MarkingSurvey.jpeg",
+    file: "petrol_bunk.png",
     alt: "Survey and marking carried out at a petrol bunk site",
     fit: "cover",
+  },
+  "Sub Division Survey and Marking": {
+    file: "Sub Division Survey and Marking.png",
+    alt: "Sub division layout plan marking numbered plots, blocks and open spaces",
+    fit: "contain",
   },
 };
 
