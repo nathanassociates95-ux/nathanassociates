@@ -22,8 +22,20 @@ const OFFICES = [
   },
 ];
 
-const HEAD_OFFICE_MAP_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
-  ["Nathan Associates", ...OFFICES[0].lines].join(", "),
+/**
+ * Google Maps destination, resolved from the supplied short link
+ * https://maps.app.goo.gl/LSz2pnXGeN2otBkJ8 - Google redirects it to a place
+ * map pinned at exactly these coordinates (10°31'08.5"N 78°29'12.8"E), so
+ * the embed is built from the verified coordinates rather than a guessed
+ * place name. The link below is kept exactly as supplied for the visible
+ * "Open in Google Maps" destination.
+ */
+const MAP_PLACE_COORDS = "10.519023,78.486884";
+const MAP_OPEN_URL = "https://maps.app.goo.gl/LSz2pnXGeN2otBkJ8";
+
+/** Embed URL built from the verified coordinates of the supplied link. */
+const MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
+  MAP_PLACE_COORDS,
 )}&z=17&output=embed`;
 
 const ContactSection = ({ withHeading = true }) => {
@@ -158,14 +170,24 @@ const ContactSection = ({ withHeading = true }) => {
           <div className="lg:col-span-2">
             <div className="card h-full overflow-hidden">
               <iframe
-                src={HEAD_OFFICE_MAP_URL}
+                src={MAP_EMBED_URL}
                 className="aspect-[4/3] h-auto w-full bg-slate-100 lg:aspect-auto lg:h-full lg:min-h-[420px]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="NATHAN ASSOCIATES head office location map"
+                title="NATHAN ASSOCIATES location map"
               />
+              <a
+                href={MAP_OPEN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-slate-50 px-4 py-3 text-sm font-semibold text-brand-navy transition-colors hover:text-brand-orange"
+              >
+                <MapPin size={16} aria-hidden="true" />
+                Open in Google Maps
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
             </div>
           </div>
         </div>
