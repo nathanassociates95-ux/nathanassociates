@@ -232,9 +232,6 @@ html {
     padding: 4px;
   }
 
-  /*
-    Micro-thumbnail beside each detailed sub-service entry in ServiceScope.
-    Sized large enough that survey plans, approval documents and technical
   /* Restrained "measuring sweep" across the card image on hover / focus */
   .svc-sweep {
     position: absolute;
@@ -247,21 +244,25 @@ html {
     transition: transform 0.9s ease-out, opacity 0.3s ease-out;
   }
 
-  .svc-card:focus-visible {
+  /* Visible focus indicator on the only focusable element in the card.
+     The card-level :focus-visible selectors were dead code — an <article>
+     is never focused; the inner Details link is. */
+  .svc-card a:focus-visible {
     outline: 2px solid #6ee7b7;
-    outline-offset: 2px;
+    outline-offset: 3px;
+    border-radius: 4px;
   }
   .svc-card:hover .svc-media-img,
-  .svc-card:focus-visible .svc-media-img {
+  .svc-card:focus-within .svc-media-img {
     transform: scale(1.05);
   }
   .svc-card:hover .svc-sweep,
-  .svc-card:focus-visible .svc-sweep {
+  .svc-card:focus-within .svc-sweep {
     opacity: 1;
     transform: translateX(350%);
   }
   .svc-card:hover .svc-arrow,
-  .svc-card:focus-visible .svc-arrow {
+  .svc-card:focus-within .svc-arrow {
     transform: translateX(3px);
   }
 
@@ -272,11 +273,11 @@ html {
       transition: none;
     }
     .svc-card:hover .svc-media-img,
-    .svc-card:focus-visible .svc-media-img,
+    .svc-card:focus-within .svc-media-img,
     .svc-card:hover .svc-sweep,
-    .svc-card:focus-visible .svc-sweep,
+    .svc-card:focus-within .svc-sweep,
     .svc-card:hover .svc-arrow,
-    .svc-card:focus-visible .svc-arrow {
+    .svc-card:focus-within .svc-arrow {
       transform: none;
     }
   }

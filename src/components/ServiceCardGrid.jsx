@@ -5,10 +5,11 @@ import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { getServiceScope } from "@/lib/serviceScope";
 import {
-  SERVICE_MEDIA,
-  APPROVALS_MEDIA,
-  CONSULTANCY_MEDIA,
+  SERVICE_MEDIA_LOOKUP,
+  APPROVALS_MEDIA_LOOKUP,
+  CONSULTANCY_MEDIA_LOOKUP,
   serviceMediaSrc,
+  normalizeMediaKey,
 } from "@/lib/serviceMedia";
 
 /**
@@ -26,9 +27,9 @@ import {
  */
 
 const MEDIA_BY_SLUG = {
-  "digital-survey-marking": SERVICE_MEDIA,
-  approvals: APPROVALS_MEDIA,
-  consultancy: CONSULTANCY_MEDIA,
+  "digital-survey-marking": SERVICE_MEDIA_LOOKUP,
+  approvals: APPROVALS_MEDIA_LOOKUP,
+  consultancy: CONSULTANCY_MEDIA_LOOKUP,
 };
 
 const ServiceCardGrid = ({ slug }) => {
@@ -44,7 +45,17 @@ const ServiceCardGrid = ({ slug }) => {
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
       {groups.map((group, gIdx) =>
         group.items.map((item, iIdx) => {
-          const media = mediaMap[item.name];
+          const media = mediaMap[normalizeMediaKey(item.name)];
+
+          /* Development diagnostic (stripped from production bundles):
+             surface every sub-service that would silently render without its
+             card image so missing mappings are never hidden by fallback
+             logic. */
+          if (!media && process.env.NODE_ENV !== "production") {
+            console.warn(
+              `[serviceMedia] no image mapped for sub-service "${item.name}" (${slug}) — card will render without a thumbnail until an asset is added and mapped.`,
+            );
+          }
           const anchorId = iIdx === 0 ? group.id : undefined;
 
           return (
