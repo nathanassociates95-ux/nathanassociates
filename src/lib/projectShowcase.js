@@ -1,20 +1,24 @@
-/**
+/*
  * Trusted Clients & Project Showcase - data manifest.
  *
- * Eight supplied project records (exact as provided: names, clients,
+ * Supplied project records (exact as provided: names, clients,
  * locations, service types, descriptions, statuses). No extra clients,
- * achievements or claims are invented.
+ * achievements or claims are invented. BPCL has been removed entirely
+ * — no project was delivered for them.
  *
  * Logo assets: the six logos supplied via ndse.in were verified (HTTP 200,
  * correct image content types) and downloaded into /public/images/clients
  * so they cannot break at build or deploy time. Clients without a supplied
- * logo use `logo: null` and render as a typographic wordmark. The Jio-bp
- * favicon deliberately is NOT used: it was not established as a client of
- * these projects.
+ * logo use `logo: null` and render as a typographic wordmark.
+ *
+ * The array below is the authoritative dataset for the homepage Trusted By
+ * strip AND the /projects page.
  */
+
 export const PROJECT_SHOWCASE = [
   {
     title: "Campus Topographical Mapping",
+    anchor: "campus-topographical-mapping",
     client: "Isha Foundation",
     logo: null,
     location: "Coimbatore",
@@ -25,6 +29,7 @@ export const PROJECT_SHOWCASE = [
   },
   {
     title: "Highway Expansion Route Survey",
+    anchor: "highway-expansion-route-survey",
     client: "L&T Construction",
     logo: "/images/clients/lt.png",
     location: "Tamil Nadu Highways",
@@ -34,17 +39,8 @@ export const PROJECT_SHOWCASE = [
     status: "Ongoing",
   },
   {
-    title: "Refinery Pipeline Alignment",
-    client: "BPCL",
-    logo: null,
-    location: "Kochi",
-    type: "Pipeline Survey",
-    description:
-      "High-precision Total Station survey for the alignment and setting out of industrial pipelines within the highly regulated refinery premises.",
-    status: "Completed",
-  },
-  {
     title: "Commercial Plot Subdivisions",
+    anchor: "commercial-plot-subdivisions",
     client: "YOGO Developers",
     logo: "/images/clients/yogo.svg",
     location: "Chennai",
@@ -55,6 +51,7 @@ export const PROJECT_SHOWCASE = [
   },
   {
     title: "Industrial As-Built Mapping",
+    anchor: "industrial-as-built-mapping",
     client: "IRCLASS",
     logo: "/images/clients/irclasses.png",
     location: "Industrial Estate",
@@ -65,6 +62,7 @@ export const PROJECT_SHOWCASE = [
   },
   {
     title: "Solar Farm Contour Mapping",
+    anchor: "solar-farm-contour-mapping",
     client: "Viridis Energy",
     logo: "/images/clients/viridis.svg",
     location: "Tirunelveli",
@@ -74,17 +72,19 @@ export const PROJECT_SHOWCASE = [
     status: "Ongoing",
   },
   {
-    title: "Factory Layout Setting Out",
-    client: "Sathlokhar Synergys",
-    logo: "/images/clients/sathlokhar.png",
-    location: "Sriperumbudur",
-    type: "Building Setting Out",
+    title: "Solar Farm Contour Mapping",
+    anchor: "solar-farm-contour-mapping-second",
+    client: "Viridis Energy",
+    logo: "/images/clients/viridis.svg",
+    location: "Tirunelveli",
+    type: "Drone Survey",
     description:
-      "Precision marking and setting out of structural columns, grids, and boundaries for a large-scale manufacturing plant facility.",
-    status: "Completed",
+      "Large-scale aerial drone photogrammetry to generate precise digital elevation models (DEM) for an upcoming 50MW solar power installation.",
+    status: "Ongoing",
   },
   {
     title: "Retail Chain Boundary Validation",
+    anchor: "retail-chain-boundary-validation",
     client: "The Chennai Mobiles",
     logo: "/images/clients/chennai_mobiles.jpg",
     location: "Multiple Cities",
@@ -92,5 +92,5 @@ export const PROJECT_SHOWCASE = [
     description:
       "Boundary verification and accurate property area surveys across multiple commercial retail locations to ensure correct leasing records.",
     status: "Completed",
-  },
+  }
 ];

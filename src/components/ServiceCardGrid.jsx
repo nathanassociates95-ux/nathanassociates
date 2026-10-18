@@ -20,10 +20,10 @@ import {
  * detail boxes: the previous separate white sub-service lists are removed
  * from the three service pages, and this grid is the single detailed view.
  *
- * Image fitting comes straight from the media map: drawings/plans/documents
- * use object-contain (never cropped), photographs use object-cover. Sizing is
- * handled entirely by .svc-media in globals.css (full-width, 190-240px height
- * on desktop), so source image files are never altered.
+ * Every media image fills its card's media box edge to edge:
+ * object-cover + object-center with a fixed height (.svc-media), so source
+ * aspect ratios never leave side letterboxing. Sizing is handled entirely
+ * by .svc-media in globals.css, so source image files are never altered.
  */
 
 const MEDIA_BY_SLUG = {
@@ -85,11 +85,7 @@ const ServiceCardGrid = ({ slug }) => {
                       alt={media.alt}
                       loading="lazy"
                       decoding="async"
-                      className={`svc-media-img ${
-                        media.fit === "cover"
-                          ? "svc-media-img-cover object-cover object-center"
-                          : "svc-media-img-contain object-contain object-center"
-                      }`}
+                      className="svc-media-img svc-media-img-cover object-cover object-center"
                     />
                     <span className="svc-sweep" aria-hidden="true" />
                   </div>

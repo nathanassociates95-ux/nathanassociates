@@ -226,12 +226,6 @@ html {
     @apply h-full w-full transition-transform duration-500 ease-out;
     will-change: transform;
   }
-  /* Contained drawings: tiny edge padding only, so essential labels and
-     boundaries never touch the frame edge while the image stays large. */
-  .svc-media-img-contain {
-    padding: 4px;
-  }
-
   /* Restrained "measuring sweep" across the card image on hover / focus */
   .svc-sweep {
     position: absolute;

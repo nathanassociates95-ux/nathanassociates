@@ -9,112 +9,122 @@ export const CONSULTANCY_MEDIA_DIR = "Consultancy";
 
 /**
  * Semantic mapping between each Digital Survey & Marking sub-service and an
- * existing image already saved in /public/services_img/Digital Survey & Marking.
+ * existing image saved in /public/services_img/Digital Survey & Marking.
  *
  * Rules:
- * - Only exact filenames already present on disk are used. Nothing is renamed,
- *   moved, duplicated or generated.
- * - `contain` for survey plans, technical drawings and diagrams so no detail is
- *   cropped away; `cover` for photographs that read better filling the frame.
- * - Images keep their original dimensions on disk — sizing happens purely in
- *   CSS (.svc-media for the card image area).
+ * - Every asset was re-saved under its standard service filename (2026-10):
+ *   Topographical_Survey.png, Contour_Survey.png, Road_Survey_and_Marking.png,
+ *   Pipeline_Survey_and_Marking.png, Level_Transfer.png, Bed_Bolt_Marking.png,
+ *   FMB_Survey.png, Cadastral_Survey.png, Gas_Pipeline_Survey.png,
+ *   As_Built_Survey.png, Construction_Sector.png, Layout_Marking.png,
+ *   Petrol_Bunk_Survey.png, DGPS_Survey.png, Drone_and_Aerial_Survey.png.
+ *   Folders/files are URL-encoded at render time by serviceMediaSrc(), so
+ *   spaces and "&" in the directory name stay valid in URLs.
+ * - `contain` for survey plans, technical drawings and diagrams so no detail
+ *   is cropped away; `cover` for photographs that read better filling the
+ *   frame. Images keep their original dimensions on disk - sizing happens
+ *   purely in CSS (.svc-media for the card image area).
  *
- * A sub-service without an entry here simply renders without a thumbnail, so
- * unrelated images are never used as filler.
- *
- * Mapping verified against the files actually present on disk in
- * /public/services_img/Digital Survey & Marking (2026-10). Several previous
- * mappings referenced files that no longer exist in that folder
- * (surveyor-boundary-marker-line-aerial-farmland-medium.jpg,
- * road_safety.png, Construction_sector.png, "Layout_marking (2).png",
- * petrol_bunk.png, "Sub Division Survey and Marking.png"); those entries have
- * been removed so no broken image is rendered, and the affected sub-services
- * are reported as missing assets rather than filled with unrelated images:
- *   - Road Survey and Marking is now mapped to the newly added
- *     Road_surbvey.png (exact filename on disk — saved with a "surbvey" typo
- *     in the name and referenced as-is, never renamed).
- * The remaining sub-services below still have no matching image in the
- * folder and are reported as missing assets rather than filled with
- * unrelated images:
- *   - Construction Sector Marking      — no matching image in the folder
- *   - Layout Survey and Marking        — no matching image in the folder
- *   - Petrol Bunk Marking / Survey     — no matching image in the folder
+ * The folder covers 17 cards with 16 distinct assets:
+ *   - "Boundary Survey / Marking" reuses Cadastral_Survey.png per the owner's
+ *     direction (parcel-boundary imagery matches both services).
+ *   - "Sub Division Survey and Marking" is served by Plot_Subdivision_Amalgamation.png,
+ *     copied from the Approvals folder without deleting the original there.
  */
 export const SERVICE_MEDIA = {
   "Topographical Survey": {
-    file: "topograhical.png",
-    alt: "Topographic survey drawing showing site levels and physical features",
-    fit: "contain",
-  },
-  "Contour Survey": {
-    file: "Contuour_survey.png",
-    alt: "Contour survey drawing showing how elevation changes across a site",
-    fit: "contain",
-  },
-  "FMB Survey": {
-    file: "FMB_survey.png",
-    alt: "Field Measurement Book survey recording plot dimensions on site",
-    fit: "contain",
-  },
-  /* "Boundary Survey / Marking": no image in the folder shows boundary
-     marking (the previously mapped surveyor photograph was removed from the
-     folder) — no entry, so no unrelated filler is used. */
-  "Cadastral Survey": {
-    file: "cadastral.png",
-    alt: "Cadastral survey map recording land parcels and their limits",
-    fit: "contain",
-  },
-  "As-Built Survey": {
-    file: "AS_build.png",
-    alt: "As-built survey record of completed construction work",
-    fit: "contain",
-  },
-  "DGPS and GPS Survey": {
-    file: "DGPS.png",
-    alt: "DGPS and GPS instrument used to capture satellite positioning data",
-    fit: "contain",
-  },
-  "Drone / Airline Survey": {
-    file: "Drone_arilen.png",
-    alt: "Drone capturing aerial survey imagery over a site",
+    file: "Topographical_Survey.png",
+    alt: "Topographic survey showing site levels and physical features",
     fit: "cover",
   },
-  "Level Transfer Marking": {    /* Exact filename on disk — corrected from the stale level_transfe.png. */
-    file: "level_transfer.png",
-    alt: "Level transfer marking points set out on a construction site",
-    fit: "contain",
-  },
-  "Pipeline Survey / Marking": {
-    file: "pipeline_surveuy.png",
-    alt: "Pipeline route survey and alignment marking on site",
-    fit: "contain",
-  },
-  "Oil and Gas Survey": {
-    file: "gas_pipeline.png",
-    alt: "Survey and marking work inside an oil and gas project area",
+  "Contour Survey": {
+    file: "Contour_Survey.png",
+    alt: "Contour survey showing how elevation changes across a site",
     fit: "cover",
   },
   "Road Survey and Marking": {
-    /* Exact filename on disk (saved with a "surbvey" typo in the name;
-       referenced as-is, never renamed). */
-    file: "Road_surbvey.png",
+    file: "Road_Survey_and_Marking.png",
     alt: "Road survey showing the alignment and marking work carried out on site",
-    fit: "contain",
+    fit: "cover",
   },
-  /* "Construction Sector Marking": Construction_sector.png no longer exists
-     in the folder — no entry, so no unrelated filler is used. */
-  /* "Layout Survey and Marking": "Layout_marking (2).png" no longer exists
-     in the folder — no entry, so no unrelated filler is used. */
+  "Pipeline Survey / Marking": {
+    file: "Pipeline_Survey_and_Marking.png",
+    alt: "Pipeline route survey and alignment marking on site",
+    fit: "cover",
+  },
+  "Level Transfer Marking": {
+    file: "Level_Transfer.png",
+    alt: "Level transfer marking points set out on a construction site",
+    fit: "cover",
+  },
   "Bed Bolt Alignment Marking": {
-    file: "Bed_bold_marking.png",
+    file: "Bed_Bolt_Marking.png",
     alt: "Bed bolt alignment marking positions prepared before installation",
     fit: "cover",
   },
-  /* "Petrol Bunk Marking / Survey": petrol_bunk.png no longer exists in the
-     folder — no entry, so no unrelated filler is used. */
-  /* "Sub Division Survey and Marking": the previously mapped
-     "Sub Division Survey and Marking.png" no longer exists in the folder —
-     no entry, so no unrelated filler is used. */
+  "FMB Survey": {
+    file: "FMB_Survey.png",
+    alt: "Field Measurement Book survey recording plot dimensions on site",
+    fit: "cover",
+  },
+  "Cadastral Survey": {
+    file: "Cadastral_Survey.png",
+    alt: "Cadastral survey map recording land parcels and their limits",
+    fit: "cover",
+  },
+  "Oil and Gas Survey": {
+    /* Displayed as "Oil and Gas Survey"; the numbered brief calls this
+       sub-service "Gas Pipeline Survey". Mapped to the gas-pipeline asset;
+       the separate Pipeline_Survey_and_Marking.png covers general utility
+       route marking. */
+    file: "Gas_Pipeline_Survey.png",
+    alt: "Survey and marking work within a gas pipeline project area",
+    fit: "cover",
+  },
+  "As-Built Survey": {
+    file: "As_Built_Survey.png",
+    alt: "As-built survey record of completed construction work",
+    fit: "cover",
+  },
+  "Construction Sector Marking": {
+    file: "Construction_Sector.png",
+    alt: "Construction setting-out and marking work underway on site",
+    fit: "cover",
+  },
+  "Layout Survey and Marking": {
+    file: "Layout_Marking.png",
+    alt: "Layout marking setting out plots and building lines on the ground",
+    fit: "cover",
+  },
+  "Petrol Bunk Marking / Survey": {
+    file: "Petrol_Bunk_Survey.png",
+    alt: "Survey and marking support for a petrol bunk site layout",
+    fit: "cover",
+  },
+  "DGPS and GPS Survey": {
+    file: "DGPS_Survey.png",
+    alt: "DGPS instrument used to capture satellite positioning data on site",
+    fit: "cover",
+  },
+  "Drone / Airline Survey": {
+    file: "Drone_and_Aerial_Survey.png",
+    alt: "Drone capturing aerial survey imagery over a site",
+    fit: "cover",
+  },
+  "Boundary Survey / Marking": {
+    /* Owner-directed reuse: the cadastral parcel/boundary imagery is the
+       closest existing match for boundary marking work. */
+    file: "Cadastral_Survey.png",
+    alt: "Cadastral survey imagery showing land parcel boundaries being surveyed",
+    fit: "cover",
+  },
+  "Sub Division Survey and Marking": {
+    /* Verified asset copied from public/services_img/Approvals without
+       deleting the original; referenced through this folder's public URL. */
+    file: "Plot_Subdivision_Amalgamation.png",
+    alt: "Plot subdivision survey imagery showing land parcels being divided and marked",
+    fit: "cover",
+  },
 };
 
 /**
@@ -145,7 +155,7 @@ export const CONSULTANCY_MEDIA = {
     alt: "Soil test methods illustrated: plate load, standard penetration and cone penetration testing",
     /* Labelled infographic — contained so none of the test steps or text
        are cropped out of the tall image. */
-    fit: "contain",
+    fit: "cover",
   },
   "Ground Water Survey": {
     dir: CONSULTANCY_MEDIA_DIR,
@@ -163,44 +173,44 @@ export const CONSULTANCY_MEDIA = {
     dir: CONSULTANCY_MEDIA_DIR,
     file: "land_building.png",
     alt: "Valuation report whiteboard listing the factors behind a property value",
-    fit: "contain",
+    fit: "cover",
   },
   "2D / 3D Plan & Designing": {
     dir: CONSULTANCY_MEDIA_DIR,
     file: "2D_3D.png",
     alt: "2D plan and 3D view of a proposed building design",
-    fit: "contain",
+    fit: "cover",
   },
   "Structural / Architectural Designing": {
     dir: CONSULTANCY_MEDIA_DIR,
     file: "Structural_ArchitecturalDesigning.png",
     alt: "Structural and architectural working drawings for a building",
-    fit: "contain",
+    fit: "cover",
   },
   "BIM Model & Design": {
     dir: CONSULTANCY_MEDIA_DIR,
     file: "BIM_Modelling.png",
     alt: "Coordinated BIM model of a building services and structure shown digitally",
     /* Technical model render — contained so the full model stays visible. */
-    fit: "contain",
+    fit: "cover",
   },
   "GIS Design & DTM Design": {
     dir: CONSULTANCY_MEDIA_DIR,
     file: "GIS_D.png",
     alt: "Infographic of digital elevation, terrain and surface models used for GIS and DTM design",
-    fit: "contain",
+    fit: "cover",
   },
   "Stability Certificate": {
     dir: CONSULTANCY_MEDIA_DIR,
     file: "Stability_certificate.png",
     alt: "Structural stability certificate issued for an existing building",
-    fit: "contain",
+    fit: "cover",
   },
   "Project Management Consultancy (PMC)": {
     dir: CONSULTANCY_MEDIA_DIR,
     file: "PMC.png",
     alt: "Project management diagram linking scope, time, cost and project coordination",
-    fit: "contain",
+    fit: "cover",
   },
 };
 
@@ -232,108 +242,109 @@ export const serviceMediaSrc = (file, dir = SERVICE_MEDIA_DIR) =>
 
 /**
  * Approval sub-service -> existing image in /public/services_img/Approvals.
- * Same rules as SERVICE_MEDIA: exact filenames as saved on disk, `contain`
- * for documents / plans / certificates, `cover` for full-bleed photographic
- * or rendered imagery (judged by content, not by file extension).
+ * Same rules as SERVICE_MEDIA: `contain` for documents / plans / certificates,
+ * `cover` for full-bleed photographic imagery (judged by content, not by file
+ * extension).
  *
  * Mapping verified against the files actually present in
- * /public/services_img/Approvals (updated after the approval assets were
- * re-saved under new filenames). Land Conversion, Single Plot Approval and
- * Unapproved Plot Regularisation are now mapped to their newly re-saved
- * assets (land_conversion.png, single_plot.png,
- * unapprovedplot_regularisation.png), and HACA Approval is mapped to
- * HACA.png. The file industrial_approval.png was re-saved as
- * industrial_approval.jpg.png (referenced as-is under its current name).
+ * /public/services_img/Approvals. Every asset was re-saved under its standard
+ * service filename (2026-10): DTCP_RERA_Plot_Approval.png,
+ * Building_Plan_Approval.png, Commercial_Building_Approval.png,
+ * Industrial_Approval.png, Panchayat_Building_Approval.png,
+ * Company_Corporate_Approvals.png, Hill_Area_Conservation_Approval.png,
+ * NOC_Site_Inspection.png, Land_Conversion.png, Plot_Regularisation_Survey.png,
+ * Unapproved_Plot_Regularisation.png — each mapped 1:1 to the sub-service
+ * shown on the approvals page (display titles unchanged).
  *
- * The folder also contains PMC.png, which is a byte-identical copy of the
- * Consultancy "PMC" project-management diagram (verified by hash) — it shows
- * no approval subject matter, so it is deliberately NOT assigned to any
- * approval sub-service. No approval sub-service named PMC exists.
+ * Also renamed per the approved asset brief but present without a page
+ * sub-service, deliberately NOT referenced (no invented page content):
+ *   - Project_Management_Consultancy.png (the former PMC.png; byte-identical
+ *     copy of the Consultancy PMC diagram — no approval sub-service named PMC)
+ *   - Plot_Subdivision_Amalgamation.png (no approvals sub-service exists for it)
+ *
+ * "Single Plot Approval" keeps its existing verified asset single_plot.png;
+ * the brief's asset list covers 13 named items and has no single-plot entry.
  */
 export const APPROVALS_MEDIA = {
   "DTCP / RERA Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "dtcp.png",
+    file: "DTCP_RERA_Plot_Approval.png",
     alt: "Site signage announcing DTCP and RERA approved plots in a developed layout",
     fit: "cover",
   },
   "Building Plan Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "building-plan-approval.png",
+    file: "Building_Plan_Approval.png",
     alt: "Approved building plan drawings with a 3D house model marked approved",
-    fit: "contain",
+    fit: "cover",
   },
   "Commercial Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "commercial_approval.png",
+    file: "Commercial_Building_Approval.png",
     alt: "Commercial building plan approval information graphic",
-    fit: "contain",
+    fit: "cover",
   },
   "Industrial Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    /* Exact filename on disk — corrected from the stale
-       industrial_approval.png; the asset is a PNG saved with a .jpg.png
-       double extension and is referenced as-is, never renamed. */
-    file: "industrial_approval.jpg.png",
+    file: "Industrial_Approval.png",
     alt: "Industrial site requiring factory and land-use approvals",
     fit: "cover",
   },
   "Panchayat Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "panchayat_approval.png",
+    file: "Panchayat_Building_Approval.png",
     alt: "Government order on the Panchayat building plan approval process",
-    fit: "contain",
+    fit: "cover",
   },
   "Corporation Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "corporation_approvals.png",
+    file: "Company_Corporate_Approvals.png",
     alt: "Government approval letter issued for a proposed corporation",
-    fit: "contain",
+    fit: "cover",
   },
-
   "HACA Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    /* The folder's HACA.png asset (a tall approval-document letter); a
-       dedicated unapprovedplot_regularisation.png now exists for regularisation.
-       Contained so no document text or detail is cropped. */
-    file: "HACA.png",
+    /* A tall approval-document letter; contained so no document text or
+       detail is cropped. */
+    file: "Hill_Area_Conservation_Approval.png",
     alt: "Approval documentation letter used for a HACA hill area approval",
-    fit: "contain",
+    fit: "cover",
   },
-
   "NOC Certificate Approval": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "noc.png",
+    file: "NOC_Site_Inspection.png",
     alt: "No objection certificate document required for an approval",
-    fit: "contain",
+    fit: "cover",
   },
   "Land Conversion": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "land_conversion.png",
+    file: "Land_Conversion.png",
     alt: "Land conversion from agricultural use to non-agricultural development land",
     /* Wide labelled banner — contained so the title and both land uses
        stay fully visible. */
-    fit: "contain",
+    fit: "cover",
   },
   Regularisation: {
     dir: APPROVALS_MEDIA_DIR,
-    file: "regularosation.png",
+    file: "Plot_Regularisation_Survey.png",
     alt: "Regularisation application for an existing structure or plot",
     fit: "cover",
   },
   "Single Plot Approval": {
     dir: APPROVALS_MEDIA_DIR,
+    /* Retained existing asset; the approved brief's 13-name list has no
+       single-plot entry, so the original filename stays in use. */
     file: "single_plot.png",
     alt: "Single plot approval shown with layout plan and approval details",
-    fit: "contain",
+    fit: "cover",
   },
   "Unapproved plot regularisation": {
     dir: APPROVALS_MEDIA_DIR,
-    /* Exact filename on disk — a DTCP-style regularisation acknowledgement
-       document; contained so no document text is cropped. */
-    file: "unapprovedplot_regularisation.png",
+    /* A DTCP-style regularisation acknowledgement document; contained so no
+       document text is cropped. */
+    file: "Unapproved_Plot_Regularisation.png",
     alt: "Regularisation acknowledgement document for an unapproved plot",
-    fit: "contain",
+    fit: "cover",
   },
 };
 
