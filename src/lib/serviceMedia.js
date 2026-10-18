@@ -53,7 +53,7 @@ export const SERVICE_MEDIA = {
     fit: "cover",
   },
   "Level Transfer Marking": {
-    file: "Level_Transfer.png",
+    file: "level_transfer.png",
     alt: "Level transfer marking points set out on a construction site",
     fit: "cover",
   },
@@ -63,7 +63,7 @@ export const SERVICE_MEDIA = {
     fit: "cover",
   },
   "FMB Survey": {
-    file: "FMB_Survey.png",
+    file: "FMB_survey.png",
     alt: "Field Measurement Book survey recording plot dimensions on site",
     fit: "cover",
   },
@@ -318,7 +318,7 @@ export const APPROVALS_MEDIA = {
   },
   "Land Conversion": {
     dir: APPROVALS_MEDIA_DIR,
-    file: "Land_Conversion.png",
+    file: "land_conversion.png",
     alt: "Land conversion from agricultural use to non-agricultural development land",
     /* Wide labelled banner — contained so the title and both land uses
        stay fully visible. */
