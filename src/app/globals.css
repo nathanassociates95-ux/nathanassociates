@@ -397,3 +397,139 @@ p strong {
     transform: none;
   }
 }
+
+/* +
+  Trusted Clients showcase (homepage, after Services).
+  1. Logos strip: continuous CSS marquee - the run is duplicated once and
+     translated exactly -50% per loop, so the wrap is pixel-identical (no
+     visible jump). Hover/focus pauses via animation-play-state; movement is
+     disabled entirely under prefers-reduced-motion (strip becomes a static
+     scrollable row).
+  2. Project carousel: transform-based track with a smooth ease; under
+     prefers-reduced-motion transitions are instant.
++ */
+.client-slide-track {
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.client-marquee-track {
+  animation: client-marquee-scroll 42s linear infinite;
+  will-change: transform;
+}
+.client-marquee:hover .client-marquee-track,
+.client-marquee:focus-within .client-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes client-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Unlayered rules win over Tailwind's layered .client-marquee
+     overflow-hidden, so the reduced-motion strip stays reachable. */
+  .client-marquee {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .client-marquee::-webkit-scrollbar {
+    display: none;
+  }
+  .client-marquee-track {
+    animation: none;
+    will-change: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .client-slide-track,
+  .client-slide-window {
+    transition: none;
+  }
+}
+
+/*
+  Contact page location map (LocationMap component, Leaflet + OSM tiles).
+  The map fills its container; the marker is a red landmark pin with a
+  visible "Nathan Associates" label chip, and the whole marker is a real
+  link that opens the supplied Google Maps destination. Kept outside the
+  Tailwind layers (like the ongoing-* rules above) so it is never purged.
+*/
+.nm-map {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
+.nm-map .leaflet-bar,
+.nm-map .leaflet-control-attribution {
+  font-size: 11px;
+  line-height: 1.4;
+}
+.nm-marker {
+  background: transparent;
+  border: 0;
+}
+.nm-marker-link {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+.nm-marker-link:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+/* White label chip with the business name, sitting above the pin. */
+.nm-marker-label {
+  margin-bottom: 4px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform 0.15s ease-out;
+}
+/* Red landmark pin (teardrop) below the label chip. */
+.nm-marker-pin {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50% 50% 50% 0;
+  background: #dc2626;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.35);
+  transform: rotate(-45deg);
+}
+.nm-marker-pin::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.nm-marker-link:hover .nm-marker-label {
+  transform: translateY(-2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nm-marker-label {
+    transition: none;
+  }
+  .nm-marker-link:hover .nm-marker-label {
+    transform: none;
+  }
+}

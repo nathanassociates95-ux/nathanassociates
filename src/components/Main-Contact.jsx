@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import LocationMap from "./LocationMap";
 import { SERVICES } from "@/lib/services";
 
 const OFFICES = [
@@ -25,18 +26,19 @@ const OFFICES = [
 /**
  * Google Maps destination, resolved from the supplied short link
  * https://maps.app.goo.gl/LSz2pnXGeN2otBkJ8 - Google redirects it to a place
- * map pinned at exactly these coordinates (10°31'08.5"N 78°29'12.8"E), so
- * the embed is built from the verified coordinates rather than a guessed
- * place name. The link below is kept exactly as supplied for the visible
- * "Open in Google Maps" destination.
+ * map pinned at exactly these coordinates (10°31'08.5"N 78°29'12.8"E).
+ * The link below is kept exactly as supplied for the marker click-through
+ * and the visible "Open in Google Maps" destination.
+ *
+ * Why not a Google Maps embed: the location has no Google Business Profile,
+ * so a name query is stripped to a bare coordinate pin, and Google's
+ * place-info panel fails with "Place info couldn't load" in real browsers.
+ * No Maps API key exists in this project, so LocationMap (Leaflet + OSM
+ * tiles) renders the map with a red landmark marker labelled "Nathan
+ * Associates" whose click opens MAP_OPEN_URL.
  */
-const MAP_PLACE_COORDS = "10.519023,78.486884";
+const MAP_CENTER = [10.519023, 78.486884];
 const MAP_OPEN_URL = "https://maps.app.goo.gl/LSz2pnXGeN2otBkJ8";
-
-/** Embed URL built from the verified coordinates of the supplied link. */
-const MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
-  MAP_PLACE_COORDS,
-)}&z=17&output=embed`;
 
 const ContactSection = ({ withHeading = true }) => {
   return (
@@ -169,14 +171,25 @@ const ContactSection = ({ withHeading = true }) => {
           {/* Map */}
           <div className="lg:col-span-2">
             <div className="card h-full overflow-hidden">
-              <iframe
-                src={MAP_EMBED_URL}
+              {/* Visible location name associated with the map below. The
+                  place has no Google Business Profile, so Google's embed
+                  cannot label the pin "Nathan Associates" natively and no
+                  Maps API key is configured for a JavaScript marker — this
+                  accessible label provides the required name instead. */}
+              <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-3">
+                <MapPin size={16} className="shrink-0 text-brand-orange" aria-hidden="true" />
+                <p className="text-sm font-bold text-gray-900">Nathan Associates</p>
+                <span className="text-xs text-slate-500">Head Office</span>
+              </div>
+              {/* Self-hosted map: red landmark marker labelled "Nathan
+                  Associates" (see LocationMap). The marker itself opens the
+                  supplied Google Maps link, and the visible link below is a
+                  second accessible way to reach the same destination. */}
+              <LocationMap
+                center={MAP_CENTER}
+                openUrl={MAP_OPEN_URL}
+                label="Nathan Associates"
                 className="aspect-[4/3] h-auto w-full bg-slate-100 lg:aspect-auto lg:h-full lg:min-h-[420px]"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="NATHAN ASSOCIATES location map"
               />
               <a
                 href={MAP_OPEN_URL}

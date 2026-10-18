@@ -3,6 +3,8 @@ import { Hero } from "@/components/Hero";
 import CapabilityStrip from "@/components/CapabilityStrip";
 import ProcessSection from "@/components/ProcessSection";
 import ServicesSection from "@/components/ServicesSection";
+import NdseVentureBanner from "@/components/NdseVentureBanner";
+import ClientShowcase from "@/components/ClientShowcase";
 import OngoingProjects from "@/components/OngoingProjects";
 import TechnicalFlow from "@/components/TechnicalFlow";
 import WhySection from "@/components/WhySection";
@@ -56,6 +58,8 @@ export default function Home() {
       <AboutSection />
       <ProcessSection />
       <ServicesSection detailed />
+      <NdseVentureBanner />
+      <ClientShowcase />
       <OngoingProjects />
       <TechnicalFlow />
       <WhySection />
